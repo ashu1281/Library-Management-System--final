@@ -51,7 +51,7 @@ namespace Library_Management_System
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 1 && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value!=null && dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()!="")
             {
-                bid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString());
+                bid = int.Parse(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
                 
                 panel2.Visible = true;

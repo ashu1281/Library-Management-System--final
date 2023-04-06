@@ -186,7 +186,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(789, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(831, 357);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -214,7 +214,7 @@
             this.panel3.Location = new System.Drawing.Point(21, 711);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1226, 358);
+            this.panel3.Size = new System.Drawing.Size(1205, 358);
             this.panel3.TabIndex = 3;
             // 
             // ReturnDateTimePicker1
@@ -222,7 +222,7 @@
             this.ReturnDateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ReturnDateTimePicker1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReturnDateTimePicker1.Location = new System.Drawing.Point(807, 194);
+            this.ReturnDateTimePicker1.Location = new System.Drawing.Point(786, 194);
             this.ReturnDateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReturnDateTimePicker1.Name = "ReturnDateTimePicker1";
             this.ReturnDateTimePicker1.Size = new System.Drawing.Size(335, 32);
@@ -233,7 +233,7 @@
             this.txtBookName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBookName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookName.Location = new System.Drawing.Point(807, 38);
+            this.txtBookName.Location = new System.Drawing.Point(786, 38);
             this.txtBookName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBookName.Name = "txtBookName";
             this.txtBookName.ReadOnly = true;
@@ -245,7 +245,7 @@
             this.txtIssueDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIssueDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIssueDate.Location = new System.Drawing.Point(807, 110);
+            this.txtIssueDate.Location = new System.Drawing.Point(786, 110);
             this.txtIssueDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIssueDate.Name = "txtIssueDate";
             this.txtIssueDate.ReadOnly = true;
@@ -262,7 +262,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(286, 32);
+            this.txtEmail.Size = new System.Drawing.Size(265, 32);
             this.txtEmail.TabIndex = 12;
             // 
             // txtContact
@@ -275,7 +275,7 @@
             this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
             this.txtContact.ReadOnly = true;
-            this.txtContact.Size = new System.Drawing.Size(286, 32);
+            this.txtContact.Size = new System.Drawing.Size(265, 32);
             this.txtContact.TabIndex = 11;
             // 
             // txtMemberName
@@ -288,7 +288,7 @@
             this.txtMemberName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMemberName.Name = "txtMemberName";
             this.txtMemberName.ReadOnly = true;
-            this.txtMemberName.Size = new System.Drawing.Size(286, 32);
+            this.txtMemberName.Size = new System.Drawing.Size(265, 32);
             this.txtMemberName.TabIndex = 10;
             // 
             // txtEnrollID
@@ -301,7 +301,7 @@
             this.txtEnrollID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEnrollID.Name = "txtEnrollID";
             this.txtEnrollID.ReadOnly = true;
-            this.txtEnrollID.Size = new System.Drawing.Size(286, 32);
+            this.txtEnrollID.Size = new System.Drawing.Size(265, 32);
             this.txtEnrollID.TabIndex = 9;
             // 
             // btnReturnBook
@@ -310,7 +310,7 @@
             this.btnReturnBook.BackColor = System.Drawing.Color.Green;
             this.btnReturnBook.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnReturnBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReturnBook.Location = new System.Drawing.Point(762, 273);
+            this.btnReturnBook.Location = new System.Drawing.Point(741, 273);
             this.btnReturnBook.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReturnBook.Name = "btnReturnBook";
             this.btnReturnBook.Size = new System.Drawing.Size(205, 38);
@@ -325,7 +325,7 @@
             this.btn_Cancel.BackColor = System.Drawing.Color.Red;
             this.btn_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Cancel.Location = new System.Drawing.Point(1017, 273);
+            this.btn_Cancel.Location = new System.Drawing.Point(996, 273);
             this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(115, 38);
@@ -340,7 +340,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(621, 197);
+            this.label7.Location = new System.Drawing.Point(600, 197);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(166, 24);
             this.label7.TabIndex = 6;
@@ -352,7 +352,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(621, 118);
+            this.label8.Location = new System.Drawing.Point(600, 118);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 24);
             this.label8.TabIndex = 5;
@@ -364,7 +364,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(621, 41);
+            this.label9.Location = new System.Drawing.Point(600, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 24);
             this.label9.TabIndex = 4;
@@ -441,7 +441,8 @@
             this.textBoxMemberName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMemberName.Location = new System.Drawing.Point(704, 191);
             this.textBoxMemberName.Name = "textBoxMemberName";
-            this.textBoxMemberName.Size = new System.Drawing.Size(469, 34);
+            this.textBoxMemberName.ReadOnly = true;
+            this.textBoxMemberName.Size = new System.Drawing.Size(448, 34);
             this.textBoxMemberName.TabIndex = 7;
             // 
             // labelMemberName

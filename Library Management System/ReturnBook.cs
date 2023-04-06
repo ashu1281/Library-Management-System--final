@@ -195,7 +195,7 @@ namespace Library_Management_System
 
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = conn;
-            cmd1.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID= '" + enroll + "' and Book_Return_Date is Null";
+            cmd1.CommandText = "select ID,EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID= '" + enroll + "' and Book_Return_Date is Null";
 
             SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
             DataSet ds1 = new DataSet();
@@ -209,11 +209,21 @@ namespace Library_Management_System
                 dataGridView1.Columns.Add("ID", "ID");
                 dataGridView1.Columns.Add("Book_Name", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
-                dataGridView1.Columns[0].DataPropertyName = "ID";
                 dataGridView1.Columns[0].Width = 50;
 
+                dataGridView1.Columns[0].DataPropertyName = "ID";
                 dataGridView1.Columns[1].DataPropertyName = "Book_Name";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
+            }
+            else
+            {
+                dataGridView1.DataSource= null;
+                dataGridView1.Columns.Add("ID", "ID");
+                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
+                dataGridView1.Columns[0].Width = 50;
+
+
             }
 
             panel3.Visible = false;
