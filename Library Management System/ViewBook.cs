@@ -38,10 +38,9 @@ namespace Library_Management_System
 
             if(ds.Tables[0].Rows.Count != 0)
             {
-                dataGridView1.Columns.Add("serialNumber", "Sr.No.");
+                
                 dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[0].Width = 70;
-                dataGridView1.Columns[1].Width = 60;
+                dataGridView1.Columns[0].Width = 60;
             }
 
         }
@@ -196,11 +195,7 @@ namespace Library_Management_System
             }
         }
 
-        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            row.Cells["serialNumber"].Value = (e.RowIndex + 1).ToString();
-        }
+        
 
         private void label2_Click(object sender, EventArgs e)
         {
