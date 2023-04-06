@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DF50E12-0C13-497A-AF9D-D17259AC1228}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library_Management_System</RootNamespace>
+    <AssemblyName>Library Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBooks.Designer.cs">
+      <DependentUpon>AddBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMember.Designer.cs">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompleteBookDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompleteBookDetails.Designer.cs">
+      <DependentUpon>CompleteBookDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotUserPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotUserPassword.Designer.cs">
+      <DependentUpon>ForgotUserPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListofMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListofMembers.Designer.cs">
+      <DependentUpon>ListofMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listofReadedBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listofReadedBooks.Designer.cs">
+      <DependentUpon>listofReadedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IssueBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IssueBook.Designer.cs">
+      <DependentUpon>IssueBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnBook.Designer.cs">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManageProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManageProfile.Designer.cs">
+      <DependentUpon>UserManageProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBook.Designer.cs">
+      <DependentUpon>ViewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewMember.Designer.cs">
+      <DependentUpon>ViewMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Welcome.Designer.cs">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddBooks.resx">
+      <DependentUpon>AddBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMember.resx">
+      <DependentUpon>AddMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompleteBookDetails.resx">
+      <DependentUpon>CompleteBookDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotUserPassword.resx">
+      <DependentUpon>ForgotUserPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListofMembers.resx">
+      <DependentUpon>ListofMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="listofReadedBooks.resx">
+      <DependentUpon>listofReadedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IssueBook.resx">
+      <DependentUpon>IssueBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ReturnBook.resx">
+      <DependentUpon>ReturnBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogin.resx">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManageProfile.resx">
+      <DependentUpon>UserManageProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBook.resx">
+      <DependentUpon>ViewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewMember.resx">
+      <DependentUpon>ViewMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database\loginTable.sql" />
+    <Content Include="Database\NewBook.sql" />
+    <Content Include="Database\IssueReturnBook.sql" />
+    <Content Include="Database\NewMember.sql" />
+    <Content Include="icon and imgs\add book.gif" />
+    <Content Include="icon and imgs\addstudent.gif" />
+    <None Include="icon and imgs\Bean Eater-1s-77px.gif" />
+    <None Include="icon and imgs\booklist.png" />
+    <None Include="icon and imgs\booklist1.png" />
+    <None Include="icon and imgs\bookslists2.png" />
+    <Content Include="icon and imgs\books_library_shelves_138556_1920x1080.jpg" />
+    <None Include="icon and imgs\Dashboardnew.jpg" />
+    <Content Include="icon and imgs\deash1.jpg" />
+    <None Include="icon and imgs\Ellipsis-1s-237px.gif" />
+    <Content Include="icon and imgs\giphy.gif" />
+    <None Include="icon and imgs\hashtag-trending.gif" />
+    <Content Include="icon and imgs\icons8-add-book-48.png" />
+    <Content Include="icon and imgs\icons8-add-book-96.png" />
+    <Content Include="icon and imgs\icons8-add-user-male-50.png" />
+    <Content Include="icon and imgs\icons8-address-book-100.png" />
+    <Content Include="icon and imgs\icons8-book-philosophy-50.png" />
+    <Content Include="icon and imgs\icons8-bookmark-book-64.png" />
+    <Content Include="icon and imgs\icons8-books-50.png" />
+    <Content Include="icon and imgs\icons8-exit-sign-50.png" />
+    <Content Include="icon and imgs\icons8-return-book-50.png" />
+    <Content Include="icon and imgs\icons8-return-book-64.png" />
+    <Content Include="icon and imgs\icons8-student-male-100.png" />
+    <Content Include="icon and imgs\icons8-student-male-1000.png" />
+    <Content Include="icon and imgs\icons8-student-male-50.png" />
+    <Content Include="icon and imgs\icons8-view-50.png" />
+    <Content Include="icon and imgs\icons8-view-501.png" />
+    <Content Include="icon and imgs\image_processing20191025-19942-14gi0n7.gif" />
+    <Content Include="icon and imgs\issueBook.gif" />
+    <None Include="icon and imgs\login-user.png" />
+    <None Include="icon and imgs\login-pass.png" />
+    <None Include="icon and imgs\list of books.jpg" />
+    <None Include="icon and imgs\listofbooksreaded.png" />
+    <None Include="icon and imgs\listofmembers.png" />
+    <None Include="icon and imgs\listofbooksreadedNEW.png" />
+    <None Include="icon and imgs\member group.png" />
+    <Content Include="icon and imgs\motivation1.jpg" />
+    <Content Include="icon and imgs\search.gif" />
+    <Content Include="icon and imgs\search1.gif" />
+    <None Include="icon and imgs\users phots%27s\user_demo.jpg" />
+    <Content Include="icon and imgs\view book gif.gif" />
+    <Content Include="icon and imgs\view book gif1.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
