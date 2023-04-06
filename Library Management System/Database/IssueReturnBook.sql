@@ -6,7 +6,7 @@ Member_Contact bigint not null,
 Member_Email varchar(250) not null,
 Book_Name varchar(250) not null,
 Book_Issue_Date varchar(250) not null,
-Book_Return_Date varchar(250) not null
+Book_Return_Date varchar(250) null
 )
 
 

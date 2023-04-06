@@ -7,5 +7,7 @@ Pass varchar(250) not null
 
 select * from loginTable
 
-insert into loginTable (UserName,Pass) values ('ashish','123');
+insert into loginTable (UserName,Pass) values ('shubham','123');
+
+insert into loginTable (UserName,Pass) values ('shreya','123');
 

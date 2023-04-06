@@ -139,5 +139,10 @@ namespace Library_Management_System
                 imagePath = openFileDialog.FileName;
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

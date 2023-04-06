@@ -144,13 +144,7 @@ namespace Library_Management_System
                 else
                 {
                     MessageBox.Show("Password not matched!");
-                }
-
-
-
-
-
-                
+                }               
             }
             else
             {

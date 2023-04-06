@@ -26,7 +26,6 @@ namespace Library_Management_System
             {
                 Image image = Image.FromFile("D:\\pratiti training\\Project\\Library Management System\\Library Management System\\icon and imgs\\search1.gif");
                 pictureBox1.Image = image;
-
                 label1.Visible = false;
 
 
@@ -179,10 +178,7 @@ namespace Library_Management_System
                 }
 
             }
-            //else
-            //{
-            //    MessageBox.Show("Please Click on Valid Cell!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

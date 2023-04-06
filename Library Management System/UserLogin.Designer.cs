@@ -156,7 +156,7 @@
             this.checkedListBox1.Location = new System.Drawing.Point(123, 345);
             this.checkedListBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(156, 25);
+            this.checkedListBox1.Size = new System.Drawing.Size(156, 46);
             this.checkedListBox1.TabIndex = 9;
             // 
             // UserLogin
