@@ -54,6 +54,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPetName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,13 +130,14 @@
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancel.Location = new System.Drawing.Point(474, 400);
+            this.btnCancel.Location = new System.Drawing.Point(510, 446);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 56);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnUpdate
             // 
@@ -142,7 +145,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(643, 400);
+            this.btnUpdate.Location = new System.Drawing.Point(683, 449);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 53);
@@ -264,6 +267,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.txtPetName);
             this.panel2.Controls.Add(this.labelPincode);
             this.panel2.Controls.Add(this.labelCity);
             this.panel2.Controls.Add(this.labelState);
@@ -419,6 +424,30 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
+            this.label6.Location = new System.Drawing.Point(356, 386);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 25);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Pet Name";
+            // 
+            // txtPetName
+            // 
+            this.txtPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPetName.Location = new System.Drawing.Point(550, 385);
+            this.txtPetName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPetName.Name = "txtPetName";
+            this.txtPetName.Size = new System.Drawing.Size(248, 28);
+            this.txtPetName.TabIndex = 23;
+            // 
             // UserManageProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,5 +504,7 @@
         private System.Windows.Forms.Label labelState;
         private System.Windows.Forms.Label labelCity;
         private System.Windows.Forms.Label labelPincode;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtPetName;
     }
 }

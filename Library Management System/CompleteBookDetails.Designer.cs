@@ -50,32 +50,34 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(136, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(181, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 24);
+            this.label1.Size = new System.Drawing.Size(328, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter Enrollment Number : ";
             // 
             // txtSearchEnroll
             // 
+            this.txtSearchEnroll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchEnroll.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchEnroll.Location = new System.Drawing.Point(392, 33);
-            this.txtSearchEnroll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearchEnroll.Location = new System.Drawing.Point(523, 41);
+            this.txtSearchEnroll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchEnroll.Name = "txtSearchEnroll";
-            this.txtSearchEnroll.Size = new System.Drawing.Size(195, 26);
+            this.txtSearchEnroll.Size = new System.Drawing.Size(259, 30);
             this.txtSearchEnroll.TabIndex = 1;
             this.txtSearchEnroll.TextChanged += new System.EventHandler(this.txtSearchEnroll_TextChanged);
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.Gainsboro;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSearch.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.Location = new System.Drawing.Point(619, 27);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(825, 33);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(121, 36);
+            this.btnSearch.Size = new System.Drawing.Size(161, 44);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -83,6 +85,7 @@
             // 
             // issuedBooksdataGridView1
             // 
+            this.issuedBooksdataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.issuedBooksdataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.issuedBooksdataGridView1.BackgroundColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -102,12 +105,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.issuedBooksdataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.issuedBooksdataGridView1.Location = new System.Drawing.Point(17, 116);
-            this.issuedBooksdataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.issuedBooksdataGridView1.Location = new System.Drawing.Point(23, 143);
+            this.issuedBooksdataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.issuedBooksdataGridView1.Name = "issuedBooksdataGridView1";
             this.issuedBooksdataGridView1.RowHeadersWidth = 51;
             this.issuedBooksdataGridView1.RowTemplate.Height = 24;
-            this.issuedBooksdataGridView1.Size = new System.Drawing.Size(1013, 169);
+            this.issuedBooksdataGridView1.Size = new System.Drawing.Size(1351, 208);
             this.issuedBooksdataGridView1.TabIndex = 3;
             this.issuedBooksdataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.issuedBooksdataGridView1_RowPostPaint);
             // 
@@ -117,28 +120,30 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(16, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(21, 101);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 22);
+            this.label2.Size = new System.Drawing.Size(158, 27);
             this.label2.TabIndex = 4;
             this.label2.Text = "Issued Books :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(16, 318);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(21, 391);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 22);
+            this.label3.Size = new System.Drawing.Size(191, 27);
             this.label3.TabIndex = 5;
             this.label3.Text = "Returned Books : ";
             // 
             // returnedBooksdataGridView2
             // 
+            this.returnedBooksdataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.returnedBooksdataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.returnedBooksdataGridView2.BackgroundColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -158,24 +163,25 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.returnedBooksdataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.returnedBooksdataGridView2.Location = new System.Drawing.Point(20, 349);
-            this.returnedBooksdataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.returnedBooksdataGridView2.Location = new System.Drawing.Point(27, 430);
+            this.returnedBooksdataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.returnedBooksdataGridView2.Name = "returnedBooksdataGridView2";
             this.returnedBooksdataGridView2.RowHeadersWidth = 51;
             this.returnedBooksdataGridView2.RowTemplate.Height = 24;
-            this.returnedBooksdataGridView2.Size = new System.Drawing.Size(1011, 220);
+            this.returnedBooksdataGridView2.Size = new System.Drawing.Size(1348, 271);
             this.returnedBooksdataGridView2.TabIndex = 6;
             this.returnedBooksdataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.returnedBooksdataGridView2_RowPostPaint);
             // 
             // btnRefresh
             // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRefresh.BackColor = System.Drawing.Color.Gainsboro;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefresh.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(776, 27);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefresh.Location = new System.Drawing.Point(1035, 33);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(121, 36);
+            this.btnRefresh.Size = new System.Drawing.Size(161, 44);
             this.btnRefresh.TabIndex = 7;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -183,12 +189,12 @@
             // 
             // CompleteBookDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1028, 579);
+            this.ClientSize = new System.Drawing.Size(1371, 713);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.returnedBooksdataGridView2);
             this.Controls.Add(this.label3);
@@ -197,7 +203,7 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearchEnroll);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompleteBookDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompleteBookDetails";

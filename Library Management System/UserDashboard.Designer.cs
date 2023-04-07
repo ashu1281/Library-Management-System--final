@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.btnSignOut = new System.Windows.Forms.Button();
@@ -36,6 +38,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.usernm = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBookRead = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -43,16 +46,16 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.usernm = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.manage_profile = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +98,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(57, 678);
+            this.label2.Location = new System.Drawing.Point(57, 670);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 29);
             this.label2.TabIndex = 3;
@@ -106,26 +109,44 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(62, 475);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(899, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(899, 180);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // dataGridView2
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(62, 721);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.Location = new System.Drawing.Point(62, 711);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 62;
             this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(893, 142);
+            this.dataGridView2.Size = new System.Drawing.Size(893, 152);
             this.dataGridView2.TabIndex = 5;
+            this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView2_RowPostPaint);
             // 
             // panel1
             // 
@@ -134,7 +155,6 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.manage_profile);
             this.panel1.Location = new System.Drawing.Point(62, 82);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -142,6 +162,17 @@
             this.panel1.Size = new System.Drawing.Size(899, 337);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // usernm
+            // 
+            this.usernm.AutoSize = true;
+            this.usernm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.usernm.Location = new System.Drawing.Point(35, 230);
+            this.usernm.Name = "usernm";
+            this.usernm.Size = new System.Drawing.Size(33, 25);
+            this.usernm.TabIndex = 4;
+            this.usernm.Text = "@";
             // 
             // panel2
             // 
@@ -151,10 +182,10 @@
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(147, 184);
+            this.panel2.Location = new System.Drawing.Point(294, 184);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(469, 115);
+            this.panel2.Size = new System.Drawing.Size(322, 115);
             this.panel2.TabIndex = 5;
             // 
             // lblBookRead
@@ -217,16 +248,42 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Book Read";
             // 
-            // usernm
+            // manage_profile
             // 
-            this.usernm.AutoSize = true;
-            this.usernm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.usernm.Location = new System.Drawing.Point(35, 230);
-            this.usernm.Name = "usernm";
-            this.usernm.Size = new System.Drawing.Size(33, 25);
-            this.usernm.TabIndex = 4;
-            this.usernm.Text = "@";
+            this.manage_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
+            this.manage_profile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.manage_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manage_profile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.manage_profile.Location = new System.Drawing.Point(669, 219);
+            this.manage_profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.manage_profile.Name = "manage_profile";
+            this.manage_profile.Size = new System.Drawing.Size(176, 50);
+            this.manage_profile.TabIndex = 0;
+            this.manage_profile.Text = "Manage Profile";
+            this.manage_profile.UseVisualStyleBackColor = false;
+            this.manage_profile.Click += new System.EventHandler(this.manage_profile_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(108)))), ((int)(((byte)(188)))));
+            this.panel3.Location = new System.Drawing.Point(28, 52);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(332, 6);
+            this.panel3.TabIndex = 6;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnRefresh.Image = global::Library_Management_System.Properties.Resources.userprofilerefresh;
+            this.btnRefresh.Location = new System.Drawing.Point(745, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(55, 50);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // pictureBox1
             // 
@@ -252,40 +309,6 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(683, 246);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(176, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // manage_profile
-            // 
-            this.manage_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
-            this.manage_profile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.manage_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manage_profile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.manage_profile.Location = new System.Drawing.Point(683, 194);
-            this.manage_profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.manage_profile.Name = "manage_profile";
-            this.manage_profile.Size = new System.Drawing.Size(176, 39);
-            this.manage_profile.TabIndex = 0;
-            this.manage_profile.Text = "Manage Profile";
-            this.manage_profile.UseVisualStyleBackColor = false;
-            this.manage_profile.Click += new System.EventHandler(this.manage_profile_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(108)))), ((int)(((byte)(188)))));
-            this.panel3.Location = new System.Drawing.Point(28, 52);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(332, 6);
-            this.panel3.TabIndex = 6;
-            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,6 +316,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
             this.ClientSize = new System.Drawing.Size(1007, 882);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView2);
@@ -314,6 +338,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -330,7 +355,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button manage_profile;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -343,5 +367,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblBookRead;
+        private System.Windows.Forms.PictureBox btnRefresh;
     }
 }

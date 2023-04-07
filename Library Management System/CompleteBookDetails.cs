@@ -65,8 +65,9 @@ namespace Library_Management_System
 
         private void txtSearchEnroll_TextChanged(object sender, EventArgs e)
         {
-            issuedBooksdataGridView1.DataSource = null;
-            returnedBooksdataGridView2.DataSource = null;    
+            
+            issuedBooksdataGridView1.Columns.Clear();
+            returnedBooksdataGridView2.Columns.Clear();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

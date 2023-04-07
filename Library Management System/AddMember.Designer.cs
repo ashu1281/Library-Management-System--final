@@ -75,7 +75,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 128);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -130,7 +129,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(618, 546);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // txtReEnterPass
             // 
@@ -409,7 +407,6 @@
             this.label6.Size = new System.Drawing.Size(46, 25);
             this.label6.TabIndex = 4;
             this.label6.Text = "City";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -518,7 +515,6 @@
             this.Name = "AddMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddMember";
-            this.Load += new System.EventHandler(this.AddMember_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -93,6 +93,17 @@ namespace Library_Management_System
             if (ds.Tables[0].Rows.Count != 0)
             {
                 dataGridView1.DataSource = ds.Tables[0];
+                dataGridView1.Columns.Clear();
+                dataGridView1.Columns.Add("serialNumber", "Sr.No.");
+                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
+                
+                dataGridView1.Columns[0].Width = 50;
+
+                dataGridView1.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
+
+
             }
 
 
@@ -113,6 +124,17 @@ namespace Library_Management_System
             if (ds1.Tables[0].Rows.Count != 0)
             {
                 dataGridView2.DataSource = ds1.Tables[0];
+                dataGridView2.Columns.Clear();
+                dataGridView2.Columns.Add("serialNumber", "Sr.No.");
+                dataGridView2.Columns.Add("Book_Name", "Book Name");
+                dataGridView2.Columns.Add("Book_Issue_Date", "Book Issue Date");
+                dataGridView2.Columns.Add("Book_Return_Date", "Book return Date");
+
+                dataGridView2.Columns[0].Width = 50;
+
+                dataGridView2.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView2.Columns[2].DataPropertyName = "Book_Issue_Date";
+                dataGridView2.Columns[3].DataPropertyName = "Book_Return_Date";
             }
 
 
@@ -191,6 +213,25 @@ namespace Library_Management_System
 
             // Reset the clip of the graphics object
             e.Graphics.ResetClip();
+        }
+
+        
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UserDashboard_Load(sender,e);
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            row.Cells["serialNumber"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void dataGridView2_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+            row.Cells["serialNumber"].Value = (e.RowIndex + 1).ToString();
         }
     }
 }

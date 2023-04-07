@@ -261,6 +261,7 @@
     <Content Include="icon and imgs\search.gif" />
     <Content Include="icon and imgs\search1.gif" />
     <None Include="icon and imgs\users phots%27s\user_demo.jpg" />
+    <None Include="icon and imgs\userprofilerefresh.png" />
     <Content Include="icon and imgs\view book gif.gif" />
     <Content Include="icon and imgs\view book gif1.gif" />
   </ItemGroup>

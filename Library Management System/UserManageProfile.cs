@@ -9,6 +9,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace Library_Management_System
 {
@@ -43,6 +46,7 @@ namespace Library_Management_System
             txtCity.Text = ds.Tables[0].Rows[0][6].ToString();
             txtPincode.Text = ds.Tables[0].Rows[0][7].ToString();
             txtPassword.Text = ds.Tables[0].Rows[0][9].ToString();
+            txtPetName.Text = ds.Tables[0].Rows[0][10].ToString();
 
             if (ds.Tables[0].Rows[0][8].ToString() != "")
             {
@@ -56,6 +60,12 @@ namespace Library_Management_System
                 {
                     userImage.Image = image;
                 }
+            }
+            else
+            {
+                Image image2 = Image.FromFile("D:\\pratiti training\\Project\\Library Management System\\Library Management System\\icon and imgs\\users phots's\\user_demo.jpg");
+                userImage.Image = image2;
+
             }
 
 
@@ -98,33 +108,102 @@ namespace Library_Management_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int affectrow;
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                byte[] imageData = AddMember.ImageToByteArray(imagePath);
+                string newName = txtName.Text;
+                string newEmail = txtEmail.Text;
+                string newContact = txtContact.Text;
+                string newState = txtState.Text;
+                string newCity = txtCity.Text;
+                Int64 newPincode = Int64.Parse(txtPincode.Text);
+                string newPassword = txtPassword.Text;
+
+
+
+                // Open a connection to the database
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+
+                SqlParameter imageDataParameter = new SqlParameter("@imageDataParameter", SqlDbType.VarBinary);
+                imageDataParameter.Value = imageData;
+
+                con.Open();
+                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword, mPhoto = @imageDataParameter WHERE EnrollID= '" + userId + "'";
+
+
+
+                // Add the parameters to the command object's Parameters collection
+                cmd.Parameters.Add("@newName", SqlDbType.VarChar).Value = newName;
+                cmd.Parameters.Add("@newEmail", SqlDbType.VarChar).Value = newEmail;
+                cmd.Parameters.Add("@newContact", SqlDbType.VarChar).Value = newContact;
+                cmd.Parameters.Add("@newState", SqlDbType.VarChar).Value = newState;
+                cmd.Parameters.Add("@newCity", SqlDbType.VarChar).Value = newCity;
+                cmd.Parameters.Add("@newPincode", SqlDbType.Int).Value = newPincode;
+                cmd.Parameters.Add("@newPassword", SqlDbType.VarChar).Value = newPassword;
+                cmd.Parameters.Add(imageDataParameter);
+
+                //// Execute the SQL command
+
+
+                affectrow = cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+
+                string newName = txtName.Text;
+                string newEmail = txtEmail.Text;
+                string newContact=txtContact.Text;
+                string newState = txtState.Text;
+                string newCity = txtCity.Text;
+                Int64 newPincode = Int64.Parse(txtPincode.Text);
+                string newPassword = txtPassword.Text;
+
+
+
+                // Open a connection to the database
+                SqlConnection con=new SqlConnection();
+                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+
+               
+
+                con.Open();
+                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword WHERE EnrollID= '"+ userId + "'";
+
+
+
+                // Add the parameters to the command object's Parameters collection
+                cmd.Parameters.Add("@newName", SqlDbType.VarChar).Value = newName;
+                cmd.Parameters.Add("@newEmail", SqlDbType.VarChar).Value = newEmail;
+                cmd.Parameters.Add("@newContact", SqlDbType.VarChar).Value = newContact;
+                cmd.Parameters.Add("@newState", SqlDbType.VarChar).Value = newState;
+                cmd.Parameters.Add("@newCity", SqlDbType.VarChar).Value = newCity;
+                cmd.Parameters.Add("@newPincode", SqlDbType.Int).Value = newPincode;
+                cmd.Parameters.Add("@newPassword", SqlDbType.VarChar).Value = newPassword;
+
+                //// Execute the SQL command
+
+
+                 affectrow =cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
             // Get the updated values from the textboxes
-            string newName = txtName.Text;
-            string newEmail = txtEmail.Text;
-            string newContact=txtContact.Text;
-            string newState = txtState.Text;
-            string newCity = txtCity.Text;
-            Int64 newPincode = Int64.Parse(txtPincode.Text);
-            string newPassword = txtPassword.Text;
-
-            // Open a connection to the database
-            SqlConnection con=new SqlConnection();
-            con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
-
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-
-            con.Open();
-            cmd.CommandText = "Update NewMember set mName='" + newName + "' , mEmail='" + newEmail + "', mContact='" + newContact + "' , mState='" + newState + "' , mCity='" + newCity + "',mPincode=" + newPincode + ", mPassword='" + newPassword + "' WHERE EnrollID= '"+ userId + "'" ;
-
-            int affectrow=cmd.ExecuteNonQuery();
-            if(affectrow > 0)
+            if (affectrow > 0)
             {
                 MessageBox.Show("data Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             
-            con.Close();
+            
       
         }
 
@@ -143,6 +222,11 @@ namespace Library_Management_System
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            UserManageProfile_Load(sender, e);
         }
     }
 }

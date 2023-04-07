@@ -30,11 +30,6 @@ namespace Library_Management_System
             }
         }
 
-        private void AddMember_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             txtFullName.Clear();
@@ -51,7 +46,18 @@ namespace Library_Management_System
             pictureBoxMember.Image = image2;
 
         }
-        private byte[] ImageToByteArray(string imagePath)
+
+        string imagePath = "";
+        private void btnBrowseImg_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxMember.Image = new Bitmap(openFileDialog.FileName);
+                imagePath = openFileDialog.FileName;
+            }
+        }
+        public static byte[] ImageToByteArray(string imagePath)
         {
             using (FileStream fs = new FileStream(imagePath, FileMode.Open, FileAccess.Read))
             {
@@ -70,7 +76,7 @@ namespace Library_Management_System
                 if(txtPassword.Text == txtReEnterPass.Text)
                 {
 
-                    // Check if an image was chosen
+                    //if Check  an image was chosen
                     if (!string.IsNullOrEmpty(imagePath))
                     {
                         // Convert the image to a byte array
@@ -153,31 +159,7 @@ namespace Library_Management_System
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-        string imagePath = "";
-        private void btnBrowseImg_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-               pictureBoxMember.Image = new Bitmap(openFileDialog.FileName);
-               imagePath = openFileDialog.FileName;
-            }
-        }
+      
     }
 }
