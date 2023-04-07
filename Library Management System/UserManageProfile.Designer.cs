@@ -155,10 +155,10 @@
             // 
             this.btnChooseImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
             this.btnChooseImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChooseImage.Location = new System.Drawing.Point(17, 230);
+            this.btnChooseImage.Location = new System.Drawing.Point(30, 229);
             this.btnChooseImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnChooseImage.Name = "btnChooseImage";
-            this.btnChooseImage.Size = new System.Drawing.Size(198, 48);
+            this.btnChooseImage.Size = new System.Drawing.Size(185, 48);
             this.btnChooseImage.TabIndex = 10;
             this.btnChooseImage.Text = "Choose Image";
             this.btnChooseImage.UseVisualStyleBackColor = false;
