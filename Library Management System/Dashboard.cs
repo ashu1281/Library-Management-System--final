@@ -66,7 +66,7 @@ namespace Library_Management_System
                 MemberdataGridView.Columns.Clear();
                 MemberdataGridView.Columns.Add("serialNumber", "Rank");
                 MemberdataGridView.Columns.Add("Member_Name", "Member Name");
-                MemberdataGridView.Columns.Add("count", "No. of Readed Books");
+                MemberdataGridView.Columns.Add("count", "No. of Books Read");
                 MemberdataGridView.Columns[1].DataPropertyName = "Member_Name";
                 MemberdataGridView.Columns[2].DataPropertyName = "count";
                 MemberdataGridView.Columns[0].Width = 60;

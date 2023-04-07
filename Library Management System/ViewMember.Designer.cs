@@ -97,7 +97,7 @@
             this.txtSearchMemberName.Location = new System.Drawing.Point(517, 220);
             this.txtSearchMemberName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearchMemberName.Name = "txtSearchMemberName";
-            this.txtSearchMemberName.Size = new System.Drawing.Size(280, 30);
+            this.txtSearchMemberName.Size = new System.Drawing.Size(292, 30);
             this.txtSearchMemberName.TabIndex = 2;
             this.txtSearchMemberName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -107,7 +107,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.Silver;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefresh.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(830, 217);
+            this.btnRefresh.Location = new System.Drawing.Point(843, 217);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(129, 33);
@@ -145,7 +145,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1040, 308);
+            this.dataGridView1.Size = new System.Drawing.Size(1052, 308);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -176,7 +176,7 @@
             this.panel3.Location = new System.Drawing.Point(63, 604);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1040, 439);
+            this.panel3.Size = new System.Drawing.Size(1052, 439);
             this.panel3.TabIndex = 5;
             // 
             // pictureBoxMemberImg
@@ -226,10 +226,10 @@
             this.btnCancel.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(881, 372);
+            this.btnCancel.Location = new System.Drawing.Point(893, 372);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(101, 42);
+            this.btnCancel.Size = new System.Drawing.Size(115, 42);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -241,7 +241,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.Location = new System.Drawing.Point(756, 372);
+            this.btnDelete.Location = new System.Drawing.Point(768, 372);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 42);
@@ -256,10 +256,10 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Location = new System.Drawing.Point(633, 372);
+            this.btnUpdate.Location = new System.Drawing.Point(621, 372);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(101, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(125, 42);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -270,7 +270,7 @@
             this.txtPincode.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPincode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPincode.Location = new System.Drawing.Point(633, 292);
+            this.txtPincode.Location = new System.Drawing.Point(645, 292);
             this.txtPincode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPincode.Name = "txtPincode";
             this.txtPincode.Size = new System.Drawing.Size(352, 28);
@@ -281,7 +281,7 @@
             this.txtCity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCity.Location = new System.Drawing.Point(633, 226);
+            this.txtCity.Location = new System.Drawing.Point(645, 226);
             this.txtCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(352, 28);
@@ -292,7 +292,7 @@
             this.txtState.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtState.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtState.Location = new System.Drawing.Point(633, 162);
+            this.txtState.Location = new System.Drawing.Point(645, 162);
             this.txtState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(352, 28);
@@ -303,7 +303,7 @@
             this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(633, 98);
+            this.txtEmail.Location = new System.Drawing.Point(645, 98);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(348, 28);
@@ -337,7 +337,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(529, 290);
+            this.label10.Location = new System.Drawing.Point(541, 290);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(83, 24);
             this.label10.TabIndex = 5;
@@ -349,7 +349,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(529, 102);
+            this.label11.Location = new System.Drawing.Point(541, 102);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 24);
             this.label11.TabIndex = 4;
@@ -361,7 +361,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(529, 230);
+            this.label12.Location = new System.Drawing.Point(541, 230);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 24);
             this.label12.TabIndex = 3;
@@ -374,7 +374,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label13.Location = new System.Drawing.Point(43, 362);
+            this.label13.Location = new System.Drawing.Point(32, 364);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(162, 24);
             this.label13.TabIndex = 2;
@@ -386,7 +386,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label14.Location = new System.Drawing.Point(529, 164);
+            this.label14.Location = new System.Drawing.Point(541, 164);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 24);
             this.label14.TabIndex = 1;
@@ -399,7 +399,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label15.Location = new System.Drawing.Point(43, 287);
+            this.label15.Location = new System.Drawing.Point(32, 289);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(107, 24);
             this.label15.TabIndex = 0;

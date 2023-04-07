@@ -25,7 +25,8 @@ namespace Library_Management_System
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "SELECT Member_Name,Member_Contact,Member_Email, COUNT(Book_Name) AS count FROM IssueReturnBook GROUP BY Member_Name,Member_Contact,Member_Email ORDER BY count DESC";
+            //cmd.CommandText = "SELECT Member_Name, COUNT(Book_Name) AS count FROM IssueReturnBook GROUP BY Member_Name ORDER BY count DESC";
+            cmd.CommandText = "SELECT t1.mName, t1.mContact,t1.mCity, COUNT(t2.Book_Name) AS count FROM NewMember t1 JOIN IssueReturnBook t2 ON t1.EnrollID = t2.EnrollID GROUP BY t1.mName, t1.mContact, t1.mCity ORDER BY count DESC";
 
 
 
@@ -38,16 +39,15 @@ namespace Library_Management_System
                 MemberListdataGridView.DataSource = ds.Tables[0];
                 MemberListdataGridView.Columns.Clear();
                 MemberListdataGridView.Columns.Add("serialNumber", "Sr.No.");
-                MemberListdataGridView.Columns.Add("Member_Name", "Member Name");
-                MemberListdataGridView.Columns.Add("Member_Contact", "Member Contact");
-                MemberListdataGridView.Columns.Add("Member_Email", "Member Email");
+                MemberListdataGridView.Columns.Add("mName", "Member Name");
+                MemberListdataGridView.Columns.Add("mContact", "Member Contact");
+                MemberListdataGridView.Columns.Add("mCity", "Member City");
+           
                 MemberListdataGridView.Columns.Add("count", "No. of Books borrowed");
                 MemberListdataGridView.Columns[0].Width = 60;
-                MemberListdataGridView.Columns[1].DataPropertyName = "Member_Name";
-                // MemberListdataGridView.Columns[1].Width = 200;
-                MemberListdataGridView.Columns[2].DataPropertyName = "Member_Contact";
-                //MemberListdataGridView.Columns[2].Width = 200;
-                MemberListdataGridView.Columns[3].DataPropertyName = "Member_Email";
+                MemberListdataGridView.Columns[1].DataPropertyName = "mName";
+                MemberListdataGridView.Columns[2].DataPropertyName = "mContact";
+                MemberListdataGridView.Columns[3].DataPropertyName = "mCity";                             
                 MemberListdataGridView.Columns[4].DataPropertyName = "count";
 
             }

@@ -43,6 +43,7 @@ namespace Library_Management_System
                 issuedBooksdataGridView1.Columns.Add("serialNumber", "Sr.No.");
                 issuedBooksdataGridView1.DataSource = ds.Tables[0];
                 issuedBooksdataGridView1.Columns[0].Width = 70;
+                issuedBooksdataGridView1.Columns[1].Width = 90;
             }
             
 
@@ -60,6 +61,7 @@ namespace Library_Management_System
                 returnedBooksdataGridView2.Columns.Add("serialNumber", "Sr.No.");
                 returnedBooksdataGridView2.DataSource = ds1.Tables[0];
                 returnedBooksdataGridView2.Columns[0].Width = 70;
+                returnedBooksdataGridView2.Columns[1].Width = 90;
             }
         }
 
