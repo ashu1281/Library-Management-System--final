@@ -45,6 +45,8 @@
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPetName = new System.Windows.Forms.TextBox();
             this.labelPincode = new System.Windows.Forms.Label();
             this.labelCity = new System.Windows.Forms.Label();
             this.labelState = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnclose = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPetName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,7 +78,7 @@
             this.txtName.Location = new System.Drawing.Point(550, 24);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(248, 30);
+            this.txtName.Size = new System.Drawing.Size(275, 30);
             this.txtName.TabIndex = 1;
             // 
             // txtContact
@@ -87,7 +87,7 @@
             this.txtContact.Location = new System.Drawing.Point(550, 70);
             this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(248, 28);
+            this.txtContact.Size = new System.Drawing.Size(275, 28);
             this.txtContact.TabIndex = 2;
             // 
             // txtEmail
@@ -96,7 +96,7 @@
             this.txtEmail.Location = new System.Drawing.Point(550, 125);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(248, 28);
+            this.txtEmail.Size = new System.Drawing.Size(275, 28);
             this.txtEmail.TabIndex = 3;
             // 
             // txtCity
@@ -105,7 +105,7 @@
             this.txtCity.Location = new System.Drawing.Point(550, 229);
             this.txtCity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCity.Name = "txtCity";
-            this.txtCity.Size = new System.Drawing.Size(248, 28);
+            this.txtCity.Size = new System.Drawing.Size(275, 28);
             this.txtCity.TabIndex = 5;
             // 
             // txtPincode
@@ -114,7 +114,7 @@
             this.txtPincode.Location = new System.Drawing.Point(550, 278);
             this.txtPincode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPincode.Name = "txtPincode";
-            this.txtPincode.Size = new System.Drawing.Size(248, 28);
+            this.txtPincode.Size = new System.Drawing.Size(275, 28);
             this.txtPincode.TabIndex = 6;
             // 
             // txtPassword
@@ -123,7 +123,7 @@
             this.txtPassword.Location = new System.Drawing.Point(550, 328);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(248, 28);
+            this.txtPassword.Size = new System.Drawing.Size(275, 28);
             this.txtPassword.TabIndex = 7;
             // 
             // btnCancel
@@ -213,7 +213,7 @@
             this.txtState.Location = new System.Drawing.Point(550, 174);
             this.txtState.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(248, 30);
+            this.txtState.Size = new System.Drawing.Size(275, 30);
             this.txtState.TabIndex = 11;
             // 
             // label1
@@ -290,9 +290,33 @@
             this.panel2.Location = new System.Drawing.Point(91, 93);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(825, 537);
+            this.panel2.Size = new System.Drawing.Size(857, 537);
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
+            this.label6.Location = new System.Drawing.Point(356, 386);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 25);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Pet Name";
+            // 
+            // txtPetName
+            // 
+            this.txtPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPetName.Location = new System.Drawing.Point(550, 385);
+            this.txtPetName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPetName.Name = "txtPetName";
+            this.txtPetName.Size = new System.Drawing.Size(275, 28);
+            this.txtPetName.TabIndex = 23;
             // 
             // labelPincode
             // 
@@ -415,7 +439,7 @@
             this.btnclose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
             this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.Location = new System.Drawing.Point(943, 11);
+            this.btnclose.Location = new System.Drawing.Point(963, 11);
             this.btnclose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(63, 50);
@@ -424,37 +448,13 @@
             this.btnclose.UseVisualStyleBackColor = false;
             this.btnclose.Click += new System.EventHandler(this.btnclose_Click);
             // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
-            this.label6.Location = new System.Drawing.Point(356, 386);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 25);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Pet Name";
-            // 
-            // txtPetName
-            // 
-            this.txtPetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPetName.Location = new System.Drawing.Point(550, 385);
-            this.txtPetName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtPetName.Name = "txtPetName";
-            this.txtPetName.Size = new System.Drawing.Size(248, 28);
-            this.txtPetName.TabIndex = 23;
-            // 
             // UserManageProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1018, 1011);
+            this.ClientSize = new System.Drawing.Size(1049, 1011);
             this.Controls.Add(this.btnclose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);

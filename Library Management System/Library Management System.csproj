@@ -243,6 +243,7 @@
     <Content Include="icon and imgs\icons8-exit-sign-50.png" />
     <Content Include="icon and imgs\icons8-return-book-50.png" />
     <Content Include="icon and imgs\icons8-return-book-64.png" />
+    <None Include="icon and imgs\icons8-student-male-100 new.png" />
     <Content Include="icon and imgs\icons8-student-male-100.png" />
     <Content Include="icon and imgs\icons8-student-male-1000.png" />
     <Content Include="icon and imgs\icons8-student-male-50.png" />

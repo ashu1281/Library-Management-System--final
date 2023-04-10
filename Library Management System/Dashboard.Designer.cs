@@ -130,10 +130,10 @@
             // 
             // addMemberToolStripMenuItem
             // 
-            this.addMemberToolStripMenuItem.Image = global::Library_Management_System.Properties.Resources.icons8_student_male_1000;
+            this.addMemberToolStripMenuItem.Image = global::Library_Management_System.Properties.Resources.icons8_student_male_100_new;
             this.addMemberToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addMemberToolStripMenuItem.Name = "addMemberToolStripMenuItem";
-            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(306, 106);
+            this.addMemberToolStripMenuItem.Size = new System.Drawing.Size(256, 56);
             this.addMemberToolStripMenuItem.Text = "Add Member";
             this.addMemberToolStripMenuItem.Click += new System.EventHandler(this.addMemberToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@
             this.viewToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(306, 106);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(256, 56);
             this.viewToolStripMenuItem.Text = "View Member Info";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewMemberToolStripMenuItem_Click);
             // 
@@ -241,7 +241,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
