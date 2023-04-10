@@ -95,13 +95,14 @@
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
             this.booksToolStripMenuItem.Size = new System.Drawing.Size(115, 54);
             this.booksToolStripMenuItem.Text = "Books";
+            this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
             // addNewBookToolStripMenuItem
             // 
             this.addNewBookToolStripMenuItem.Image = global::Library_Management_System.Properties.Resources.icons8_add_book_48;
             this.addNewBookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewBookToolStripMenuItem.Name = "addNewBookToolStripMenuItem";
-            this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(229, 56);
+            this.addNewBookToolStripMenuItem.Size = new System.Drawing.Size(254, 56);
             this.addNewBookToolStripMenuItem.Text = "Add New Book";
             this.addNewBookToolStripMenuItem.Click += new System.EventHandler(this.addNewBookToolStripMenuItem_Click);
             // 
@@ -110,7 +111,7 @@
             this.viewBookToolStripMenuItem.Image = global::Library_Management_System.Properties.Resources.icons8_view_50;
             this.viewBookToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.viewBookToolStripMenuItem.Name = "viewBookToolStripMenuItem";
-            this.viewBookToolStripMenuItem.Size = new System.Drawing.Size(229, 56);
+            this.viewBookToolStripMenuItem.Size = new System.Drawing.Size(254, 56);
             this.viewBookToolStripMenuItem.Text = "View Book";
             this.viewBookToolStripMenuItem.Click += new System.EventHandler(this.viewBookToolStripMenuItem_Click);
             // 

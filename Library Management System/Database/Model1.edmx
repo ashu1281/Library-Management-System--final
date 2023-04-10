@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LibraryManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IssueReturnBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnrollID" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Member_Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Member_Contact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Member_Email" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Book_Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Book_Issue_Date" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Book_Return_Date" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="loginTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Pass" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewBook">
+          <Key>
+            <PropertyRef Name="bId" />
+          </Key>
+          <Property Name="bId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="bAuthor" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="bPubl" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="bPurDate" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="bPrice" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="bQuan" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewMember">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EnrollID" Type="varchar" MaxLength="9" StoreGeneratedPattern="Computed" />
+          <Property Name="mName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mContact" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mEmail" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mState" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mCity" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mPinCode" Type="bigint" Nullable="false" />
+          <Property Name="mPhoto" Type="image" />
+          <Property Name="mPassword" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="mPetName" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LibraryManagementModelStoreContainer">
+          <EntitySet Name="IssueReturnBook" EntityType="Self.IssueReturnBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loginTable" EntityType="Self.loginTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewBook" EntityType="Self.NewBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewMember" EntityType="Self.NewMember" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LibraryManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IssueReturnBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnrollID" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Member_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Member_Contact" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Member_Email" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Book_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Book_Issue_Date" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Book_Return_Date" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="loginTable">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Pass" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewBook">
+          <Key>
+            <PropertyRef Name="bId" />
+          </Key>
+          <Property Name="bId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bAuthor" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bPubl" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bPurDate" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bPrice" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bQuan" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NewMember">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EnrollID" Type="String" MaxLength="9" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="mName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mContact" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mState" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mCity" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mPinCode" Type="Int64" Nullable="false" />
+          <Property Name="mPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="mPassword" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mPetName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LibraryManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IssueReturnBooks" EntityType="Self.IssueReturnBook" />
+          <EntitySet Name="loginTables" EntityType="Self.loginTable" />
+          <EntitySet Name="NewBooks" EntityType="Self.NewBook" />
+          <EntitySet Name="NewMembers" EntityType="Self.NewMember" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LibraryManagementModelStoreContainer" CdmEntityContainer="LibraryManagementEntities">
+          <EntitySetMapping Name="IssueReturnBooks">
+            <EntityTypeMapping TypeName="LibraryManagementModel.IssueReturnBook">
+              <MappingFragment StoreEntitySet="IssueReturnBook">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EnrollID" ColumnName="EnrollID" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Member_Contact" ColumnName="Member_Contact" />
+                <ScalarProperty Name="Member_Email" ColumnName="Member_Email" />
+                <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+                <ScalarProperty Name="Book_Issue_Date" ColumnName="Book_Issue_Date" />
+                <ScalarProperty Name="Book_Return_Date" ColumnName="Book_Return_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loginTables">
+            <EntityTypeMapping TypeName="LibraryManagementModel.loginTable">
+              <MappingFragment StoreEntitySet="loginTable">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Pass" ColumnName="Pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewBooks">
+            <EntityTypeMapping TypeName="LibraryManagementModel.NewBook">
+              <MappingFragment StoreEntitySet="NewBook">
+                <ScalarProperty Name="bId" ColumnName="bId" />
+                <ScalarProperty Name="bName" ColumnName="bName" />
+                <ScalarProperty Name="bAuthor" ColumnName="bAuthor" />
+                <ScalarProperty Name="bPubl" ColumnName="bPubl" />
+                <ScalarProperty Name="bPurDate" ColumnName="bPurDate" />
+                <ScalarProperty Name="bPrice" ColumnName="bPrice" />
+                <ScalarProperty Name="bQuan" ColumnName="bQuan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewMembers">
+            <EntityTypeMapping TypeName="LibraryManagementModel.NewMember">
+              <MappingFragment StoreEntitySet="NewMember">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EnrollID" ColumnName="EnrollID" />
+                <ScalarProperty Name="mName" ColumnName="mName" />
+                <ScalarProperty Name="mContact" ColumnName="mContact" />
+                <ScalarProperty Name="mEmail" ColumnName="mEmail" />
+                <ScalarProperty Name="mState" ColumnName="mState" />
+                <ScalarProperty Name="mCity" ColumnName="mCity" />
+                <ScalarProperty Name="mPinCode" ColumnName="mPinCode" />
+                <ScalarProperty Name="mPhoto" ColumnName="mPhoto" />
+                <ScalarProperty Name="mPassword" ColumnName="mPassword" />
+                <ScalarProperty Name="mPetName" ColumnName="mPetName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

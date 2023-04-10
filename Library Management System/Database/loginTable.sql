@@ -10,4 +10,5 @@ select * from loginTable
 insert into loginTable (UserName,Pass) values ('shubham','123');
 
 insert into loginTable (UserName,Pass) values ('shreya','123');
+insert into loginTable (UserName,Pass) values ('tanushka','123');
 
