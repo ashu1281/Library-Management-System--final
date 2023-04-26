@@ -14,10 +14,10 @@ Ability to add and remove library resources
 
 Technology Stack:
 
-ASP.NET Framework
-C# programming language
-Windows Forms for the user interface
-SQL Server for the database management
+ASP.NET Framework,
+C# programming language,
+Windows Forms for the user interface,
+SQL Server for the database management.
 
 
 
