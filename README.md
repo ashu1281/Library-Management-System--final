@@ -1,15 +1,15 @@
 
-Title: Library Management System
+Title: **Library Management System**
 
 Description: The Library Management System is a software application designed to automate the day-to-day activities of a library. The system provides a user-friendly interface that allows librarians to manage library resources such as books, magazines, and CDs. It also helps users to search and borrow library materials with ease.
 
 Features:
 
-User login system to secure the library resources
-Search functionality to find books by author, title, or subject
-Automatic generation of reports on library resources and user activities
-Borrowing and returning of library materials
-Ability to add and remove library resources
+- User login system to secure the library resources
+* Search functionality to find books by author, title, or subject
++ Automatic generation of reports on library resources and user activities
+/ Borrowing and returning of library materials
+* Ability to add and remove library resources
 
 
 Technology Stack:
