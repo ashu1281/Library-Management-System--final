@@ -205,13 +205,15 @@
             this.comboBoxBooks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxBooks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBooks.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxBooks.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxBooks.FormattingEnabled = true;
             this.comboBoxBooks.Location = new System.Drawing.Point(237, 218);
             this.comboBoxBooks.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxBooks.Name = "comboBoxBooks";
             this.comboBoxBooks.Size = new System.Drawing.Size(359, 33);
+            this.comboBoxBooks.Sorted = true;
             this.comboBoxBooks.TabIndex = 9;
             // 
             // dateTimePicker1
@@ -361,9 +363,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IssueBook";
             this.Load += new System.EventHandler(this.IssueBook_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.IssueBook_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.IssueBook_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.IssueBook_MouseUp);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMemberImg)).EndInit();

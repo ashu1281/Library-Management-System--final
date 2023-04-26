@@ -28,13 +28,13 @@ namespace Library_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            
+
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
-            SqlCommand cmd = new SqlCommand();  
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
+            SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "SELECT TOP 3 Book_Name, COUNT(*) AS count FROM IssueReturnBook GROUP BY Book_Name ORDER BY count DESC ";
+            cmd.CommandText = "SELECT TOP 3 t1.bName, COUNT(t2.BookID) AS count FROM NewBook t1 JOIN IssueReturnBook t2 ON t1.bId = t2.BookID  GROUP BY t1.bName ORDER BY count DESC ";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -45,16 +45,16 @@ namespace Library_Management_System
                 BooksdataGridView.DataSource = ds.Tables[0];
                 BooksdataGridView.Columns.Clear();
                 BooksdataGridView.Columns.Add("serialNumber", "Rank");
-                BooksdataGridView.Columns.Add("Book_Name", "Book Name");
+                BooksdataGridView.Columns.Add("bName", "Book Name");
                 BooksdataGridView.Columns.Add("count", "Read Count");
                 BooksdataGridView.Columns[0].Width = 60;
-                BooksdataGridView.Columns[1].DataPropertyName = "Book_Name";
+                BooksdataGridView.Columns[1].DataPropertyName = "bName";
                 BooksdataGridView.Columns[1].Width = 200;
                 BooksdataGridView.Columns[2].DataPropertyName = "count";
 
             }
-            
-            cmd.CommandText = "SELECT TOP 3 Member_Name, COUNT(*) AS count FROM IssueReturnBook where Book_Return_Date is not null GROUP BY Member_Name ORDER BY count DESC ";
+
+            cmd.CommandText = "SELECT TOP 3 t1.mName, COUNT(MemberID) AS count FROM NewMember t1 JOIN IssueReturnBook t2 ON t1.mID = t2.MemberID where t2.Book_Return_Date is not null GROUP BY t1.mName ORDER BY count DESC ";
 
             SqlDataAdapter da1 = new SqlDataAdapter(cmd);
             DataSet ds1 = new DataSet();
@@ -65,9 +65,9 @@ namespace Library_Management_System
                 MemberdataGridView.DataSource = ds1.Tables[0];
                 MemberdataGridView.Columns.Clear();
                 MemberdataGridView.Columns.Add("serialNumber", "Rank");
-                MemberdataGridView.Columns.Add("Member_Name", "Member Name");
+                MemberdataGridView.Columns.Add("mName", "Member Name");
                 MemberdataGridView.Columns.Add("count", "No. of Books Read");
-                MemberdataGridView.Columns[1].DataPropertyName = "Member_Name";
+                MemberdataGridView.Columns[1].DataPropertyName = "mName";
                 MemberdataGridView.Columns[2].DataPropertyName = "count";
                 MemberdataGridView.Columns[0].Width = 60;
                 MemberdataGridView.Columns[1].Width = 200;

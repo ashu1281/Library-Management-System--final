@@ -1,17 +1,19 @@
-﻿create table IssueReturnBook(
-ID int NOT NULL IDENTITY(1,1) primary key,
-EnrollID varchar(250) not null,
-Member_Name varchar(250) not null,
-Member_Contact bigint not null,
-Member_Email varchar(250) not null,
-Book_Name varchar(250) not null,
-Book_Issue_Date varchar(250) not null,
-Book_Return_Date varchar(250) null
-)
+﻿CREATE TABLE IssueReturnBook(
+  ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  MemberID int NOT NULL,
+  BookID int NOT NULL,
+  Book_Issue_Date date not null,
+  Book_Return_Date date null,
+  FOREIGN KEY (MemberID) REFERENCES NewMember(ID),
+  FOREIGN KEY (BookID) REFERENCES NewBook(bId),
+);
 
-
+DROP TABLE dbo.IssueReturnBook
 
 select * from IssueReturnBook
+
+ALTER TABLE IssueReturnBook
+DROP CONSTRAINT MemberID;
 
 
 

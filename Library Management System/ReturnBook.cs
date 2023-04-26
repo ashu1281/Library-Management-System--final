@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Library_Management_System.Database;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
@@ -31,16 +33,23 @@ namespace Library_Management_System
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string enroll = txtsearchEnroll.Text;
+            int enroll = int.Parse(txtsearchEnroll.Text);
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            //cmd.CommandText = "select ID,EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID= '" + enroll + "' and Book_Return_Date is Null";
+            //cmd.CommandText = "select ID,EnrollID,Member_Name,bName,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID= '" + enroll + "' and Book_Return_Date is Null";
 
-            cmd.CommandText = "SELECT t1.ID, t1.Member_Name, t1.Book_Name,t1.Book_Issue_Date,t1.Book_Return_Date,t2.mPhoto FROM IssueReturnBook t1 JOIN NewMember t2 ON t1.EnrollID = t2.EnrollID where t1.EnrollID= '" + enroll + "' and Book_Return_Date is Null";
+            //cmd.CommandText = "SELECT t1.irID, t1.MemberID, t1.BookID, t1.Book_Issue_Date,t1.Book_Return_Date,t2.mPhoto,t2.mName FROM IssueReturnBook t1 JOIN NewMember t2 ON t1.MemberID = t2.mID where t1.MemberID= " + enroll + " and Book_Return_Date is Null";
+            
+            
+            cmd.CommandText = @"SELECT t1.irID, t2.mName, t2.mContact, t2.mEmail, t2.mPhoto, t3.bName, t1.Book_Issue_Date
+                                FROM IssueReturnBook t1
+                                INNER JOIN NewMember t2 ON t1.MemberID = t2.mID
+                                INNER JOIN NewBook t3 ON t1.BookID = t3.bId
+                                WHERE t1.MemberID = " + enroll+" and t1.Book_Return_Date is Null";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -49,11 +58,11 @@ namespace Library_Management_System
             if (ds.Tables[0].Rows.Count != 0)
             {
 
-                if (ds.Tables[0].Rows[0][5].ToString() != "")
+                if (ds.Tables[0].Rows[0][4].ToString() != "")
                 {
 
                     // Get the image data from the result set
-                    byte[] imageData = (byte[])ds.Tables[0].Rows[0][5];
+                    byte[] imageData = (byte[])ds.Tables[0].Rows[0][4];
 
                     // Convert the image data to an Image object
                     Image image = ViewMember.ByteArrayToImage(imageData);
@@ -72,13 +81,13 @@ namespace Library_Management_System
 
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("irID", "ID");
+                dataGridView1.Columns.Add("bName", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
-                dataGridView1.Columns[0].DataPropertyName = "ID";
+                dataGridView1.Columns[0].DataPropertyName = "irID";
                 dataGridView1.Columns[0].Width = 50;
 
-                dataGridView1.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView1.Columns[1].DataPropertyName = "bName";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
 
             }
@@ -91,7 +100,7 @@ namespace Library_Management_System
 
 
         int id;
-        Int64 rowid;
+        
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0 && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null && dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() != "")
@@ -104,26 +113,30 @@ namespace Library_Management_System
                 panel3.Visible = true;
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "select * from IssueReturnBook where ID = " + id + "";
+                cmd.CommandText = @"SELECT t1.MemberID,t2.mName, t2.mContact, t2.mEmail, t3.bName, t1.Book_Issue_Date
+                                FROM IssueReturnBook t1
+                                INNER JOIN NewMember t2 ON t1.MemberID = t2.mID
+                                INNER JOIN NewBook t3 ON t1.BookID = t3.bId
+                                WHERE t1.irID = " + id +"";
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
 
 
 
-                rowid = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
+               
 
-                txtEnrollID.Text = ds.Tables[0].Rows[0][1].ToString();
-                txtMemberName.Text = ds.Tables[0].Rows[0][2].ToString();
-                txtContact.Text = ds.Tables[0].Rows[0][3].ToString();
-                txtEmail.Text = ds.Tables[0].Rows[0][4].ToString();
-                txtBookName.Text = ds.Tables[0].Rows[0][5].ToString();
-                txtIssueDate.Text = ds.Tables[0].Rows[0][6].ToString();
+                txtEnrollID.Text = ds.Tables[0].Rows[0][0].ToString();
+                txtMemberName.Text = ds.Tables[0].Rows[0][1].ToString();
+                txtContact.Text = ds.Tables[0].Rows[0][2].ToString();
+                txtEmail.Text = ds.Tables[0].Rows[0][3].ToString();
+                txtBookName.Text = ds.Tables[0].Rows[0][4].ToString();
+                txtIssueDate.Text = ds.Tables[0].Rows[0][5].ToString();
 
             }
         }
@@ -158,12 +171,13 @@ namespace Library_Management_System
         private void btnReturnBook_Click(object sender, EventArgs e)
         {
 
-            String enroll = txtsearchEnroll.Text;
+            int enroll = int.Parse(txtsearchEnroll.Text);
+
             String rtdate = ReturnDateTimePicker1.Text;
             String bookName = txtBookName.Text;
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -179,7 +193,7 @@ namespace Library_Management_System
             //update book return date 
             conn.Open();
 
-            cmd.CommandText = "update IssueReturnBook SET Book_Return_Date = '" + rtdate + "' WHERE ID=" + rowid + "";
+            cmd.CommandText = "update IssueReturnBook SET Book_Return_Date = '" + rtdate + "' WHERE irID=" + id + "";
             cmd.ExecuteNonQuery();
 
             quantity++;
@@ -195,7 +209,11 @@ namespace Library_Management_System
 
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = conn;
-            cmd1.CommandText = "select ID,EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID= '" + enroll + "' and Book_Return_Date is Null";
+            cmd1.CommandText = @"SELECT t1.irID, t2.mName, t2.mContact, t2.mEmail, t2.mPhoto, t3.bName, t1.Book_Issue_Date 
+                                FROM IssueReturnBook t1
+                                INNER JOIN NewMember t2 ON t1.MemberID = t2.mID
+                                INNER JOIN NewBook t3 ON t1.BookID = t3.bId
+                                WHERE t1.MemberID = " + enroll + " and t1.Book_Return_Date is Null";
 
             SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
             DataSet ds1 = new DataSet();
@@ -206,20 +224,20 @@ namespace Library_Management_System
 
                 dataGridView1.DataSource = ds1.Tables[0];
                 dataGridView1.Columns.Clear();
-                dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("irID", "ID");
+                dataGridView1.Columns.Add("bName", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
                 dataGridView1.Columns[0].Width = 50;
 
-                dataGridView1.Columns[0].DataPropertyName = "ID";
-                dataGridView1.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView1.Columns[0].DataPropertyName = "irID";
+                dataGridView1.Columns[1].DataPropertyName = "bName";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
             }
             else
             {
                 dataGridView1.DataSource= null;
-                dataGridView1.Columns.Add("ID", "ID");
-                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("irID", "ID");
+                dataGridView1.Columns.Add("bName", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
                 dataGridView1.Columns[0].Width = 50;
 
@@ -227,6 +245,11 @@ namespace Library_Management_System
             }
 
             panel3.Visible = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

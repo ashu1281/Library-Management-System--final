@@ -22,11 +22,11 @@ namespace Library_Management_System
         private void listofReadedBooks_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "SELECT t1.bName, t1.bAuthor, t1.bPubl, COUNT(t2.Book_Name) AS count FROM NewBook t1 JOIN IssueReturnBook t2 ON t1.bName = t2.Book_Name GROUP BY t1.bName, t1.bAuthor, t1.bPubl ORDER BY count DESC";
+            cmd.CommandText = "SELECT t1.bName, t1.bAuthor, t1.bPubl, COUNT(t2.BookID) AS count FROM NewBook t1 JOIN IssueReturnBook t2 ON t1.bId = t2.BookID GROUP BY t1.bName, t1.bAuthor, t1.bPubl ORDER BY count DESC";
 
 
 
@@ -58,6 +58,11 @@ namespace Library_Management_System
         {
             DataGridViewRow row = bookListdataGridView.Rows[e.RowIndex];
             row.Cells["serialNumber"].Value = (e.RowIndex + 1).ToString();
+        }
+
+        private void bookListdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

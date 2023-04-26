@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserDashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.WelcomeLabel = new System.Windows.Forms.Label();
             this.btnSignOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +52,10 @@
             this.manage_profile = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnbookcheck = new System.Windows.Forms.Button();
+            this.avlBook = new System.Windows.Forms.Label();
+            this.searchBook = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -58,6 +63,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // WelcomeLabel
@@ -151,6 +157,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
+            this.panel1.Controls.Add(this.btnbookcheck);
             this.panel1.Controls.Add(this.usernm);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
@@ -261,6 +268,7 @@
             this.label5.Size = new System.Drawing.Size(117, 25);
             this.label5.TabIndex = 1;
             this.label5.Text = "Book Read";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // pictureBox2
             // 
@@ -279,7 +287,7 @@
             this.manage_profile.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.manage_profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manage_profile.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.manage_profile.Location = new System.Drawing.Point(669, 219);
+            this.manage_profile.Location = new System.Drawing.Point(669, 184);
             this.manage_profile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.manage_profile.Name = "manage_profile";
             this.manage_profile.Size = new System.Drawing.Size(176, 50);
@@ -310,13 +318,73 @@
             this.btnRefresh.TabStop = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView3.Location = new System.Drawing.Point(62, 928);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(893, 152);
+            this.dataGridView3.TabIndex = 7;
+            // 
+            // btnbookcheck
+            // 
+            this.btnbookcheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
+            this.btnbookcheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnbookcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbookcheck.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnbookcheck.Location = new System.Drawing.Point(669, 250);
+            this.btnbookcheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnbookcheck.Name = "btnbookcheck";
+            this.btnbookcheck.Size = new System.Drawing.Size(176, 57);
+            this.btnbookcheck.TabIndex = 8;
+            this.btnbookcheck.Text = "Check Book Availability";
+            this.btnbookcheck.UseVisualStyleBackColor = false;
+            this.btnbookcheck.Click += new System.EventHandler(this.btnbookcheck_Click);
+            // 
+            // avlBook
+            // 
+            this.avlBook.AutoSize = true;
+            this.avlBook.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avlBook.Location = new System.Drawing.Point(63, 893);
+            this.avlBook.Name = "avlBook";
+            this.avlBook.Size = new System.Drawing.Size(171, 29);
+            this.avlBook.TabIndex = 8;
+            this.avlBook.Text = "Available Books";
+            // 
+            // searchBook
+            // 
+            this.searchBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBook.Location = new System.Drawing.Point(279, 892);
+            this.searchBook.Name = "searchBook";
+            this.searchBook.Size = new System.Drawing.Size(284, 30);
+            this.searchBook.TabIndex = 9;
+            this.searchBook.Text = "Search Book by name";
+            this.searchBook.Click += new System.EventHandler(this.serachBook);
+            this.searchBook.TextChanged += new System.EventHandler(this.searchBook_TextChanged);
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
-            this.ClientSize = new System.Drawing.Size(1007, 882);
+            this.ClientSize = new System.Drawing.Size(1007, 939);
+            this.Controls.Add(this.searchBook);
+            this.Controls.Add(this.avlBook);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
@@ -342,6 +410,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +438,9 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblBookRead;
         private System.Windows.Forms.PictureBox btnRefresh;
+        private System.Windows.Forms.Button btnbookcheck;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Label avlBook;
+        private System.Windows.Forms.TextBox searchBook;
     }
 }

@@ -25,14 +25,20 @@ namespace Library_Management_System
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            string enroll=txtSearchEnroll.Text;
+            int enroll=int.Parse(txtSearchEnroll.Text);
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date from IssueReturnBook where EnrollID='"+enroll+ "' and Book_Return_Date is NULL";
+            //cmd.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date from IssueReturnBook where EnrollID='"+enroll+ "' and Book_Return_Date is NULL";
+         
+            cmd.CommandText = @"SELECT t2.mName, t3.bName, t1.Book_Issue_Date
+                                FROM IssueReturnBook t1
+                                INNER JOIN NewMember t2 ON t1.MemberID = t2.mID
+                                INNER JOIN NewBook t3 ON t1.BookID = t3.bId
+                                WHERE t1.MemberID = " + enroll + " and t1.Book_Return_Date is Null";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -40,17 +46,31 @@ namespace Library_Management_System
 
             if (ds.Tables[0].Rows.Count != 0 )
             {
-                issuedBooksdataGridView1.Columns.Add("serialNumber", "Sr.No.");
+                txtMemberName.Text = ds.Tables[0].Rows[0][0].ToString();
+
                 issuedBooksdataGridView1.DataSource = ds.Tables[0];
+                issuedBooksdataGridView1.Columns.Clear();
+                issuedBooksdataGridView1.Columns.Add("serialNumber", "Sr.No.");
+                issuedBooksdataGridView1.Columns.Add("bName", "Book Name");
+                issuedBooksdataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
+                issuedBooksdataGridView1.Columns[1].DataPropertyName = "bName";
+                issuedBooksdataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
+
                 issuedBooksdataGridView1.Columns[0].Width = 70;
-                issuedBooksdataGridView1.Columns[1].Width = 90;
+                
             }
             
 
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = conn;
 
-            cmd1.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID='" + enroll + "' and Book_Return_Date is NOT NULL";
+            //cmd1.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID='" + enroll + "' and Book_Return_Date is NOT NULL";
+
+            cmd1.CommandText = @"SELECT t3.bName, t1.Book_Issue_Date, t1.Book_Return_Date
+                                FROM IssueReturnBook t1
+                                INNER JOIN NewMember t2 ON t1.MemberID = t2.mID
+                                INNER JOIN NewBook t3 ON t1.BookID = t3.bId
+                                WHERE t1.MemberID = " + enroll + " and t1.Book_Return_Date is NOT NULL";
 
             SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
             DataSet ds1 = new DataSet();
@@ -58,10 +78,19 @@ namespace Library_Management_System
 
             if (ds1.Tables[0].Rows.Count != 0)
             {
-                returnedBooksdataGridView2.Columns.Add("serialNumber", "Sr.No.");
+
                 returnedBooksdataGridView2.DataSource = ds1.Tables[0];
+                returnedBooksdataGridView2.Columns.Clear();
+                returnedBooksdataGridView2.Columns.Add("serialNumber", "Sr.No.");
+                returnedBooksdataGridView2.Columns.Add("bName", "Book Name");
+                returnedBooksdataGridView2.Columns.Add("Book_Issue_Date", "Book Issue Date");
+                returnedBooksdataGridView2.Columns.Add("Book_Return_Date", "Book Return Date");
+
+                returnedBooksdataGridView2.Columns[1].DataPropertyName = "bName";
+                returnedBooksdataGridView2.Columns[2].DataPropertyName = "Book_Issue_Date";
+                returnedBooksdataGridView2.Columns[3].DataPropertyName = "Book_Return_Date";
+
                 returnedBooksdataGridView2.Columns[0].Width = 70;
-                returnedBooksdataGridView2.Columns[1].Width = 90;
             }
         }
 
@@ -70,6 +99,7 @@ namespace Library_Management_System
             
             issuedBooksdataGridView1.Columns.Clear();
             returnedBooksdataGridView2.Columns.Clear();
+            txtMemberName.Clear();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

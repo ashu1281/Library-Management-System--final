@@ -31,12 +31,12 @@ namespace Library_Management_System
 
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "select ID,EnrollID,mName,mContact,mEmail,mState,mCity from NewMember where EnrollID LIKE '%" + txtSearchMemberName.Text + "%' OR mName LIKE '" + txtSearchMemberName.Text + "%' ";
+                cmd.CommandText = "select mID, mName,mContact,mEmail,mState,mCity,mPinCode from NewMember where mID LIKE '%" + txtSearchMemberName.Text + "%' OR mName LIKE '" + txtSearchMemberName.Text + "%' ";
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -55,12 +55,12 @@ namespace Library_Management_System
 
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "select ID,EnrollID,mName,mContact,mEmail,mState,mCity from NewMember";
+                cmd.CommandText = "select mID,mName,mContact,mEmail,mState,mCity,mPinCode from NewMember";
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
 
@@ -80,12 +80,12 @@ namespace Library_Management_System
             panel3.Visible = false;
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "select ID,EnrollID,mName,mContact,mEmail,mState,mCity from NewMember";
+            cmd.CommandText = "select mID,mName,mContact,mEmail,mState,mCity,mPinCode from NewMember";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -113,7 +113,7 @@ namespace Library_Management_System
 
 
         int mid;
-        Int64 rowid;
+        
 
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,12 +134,12 @@ namespace Library_Management_System
 
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "select * from NewMember where ID = " + mid + "";
+                cmd.CommandText = "select * from NewMember where mID = " + mid + "";
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
 
                 DataSet ds = new DataSet();
@@ -148,21 +148,21 @@ namespace Library_Management_System
 
 
 
-                rowid = Int64.Parse(ds.Tables[0].Rows[0][0].ToString());
+                
 
-                txtenrollID.Text = ds.Tables[0].Rows[0][1].ToString();
-                txtFullName.Text = ds.Tables[0].Rows[0][2].ToString();
-                txtContact.Text = ds.Tables[0].Rows[0][3].ToString();
-                txtEmail.Text = ds.Tables[0].Rows[0][4].ToString();
-                txtState.Text = ds.Tables[0].Rows[0][5].ToString();
-                txtCity.Text = ds.Tables[0].Rows[0][6].ToString();
-                txtPincode.Text = ds.Tables[0].Rows[0][7].ToString();
+                txtenrollID.Text = ds.Tables[0].Rows[0][0].ToString();
+                txtFullName.Text = ds.Tables[0].Rows[0][1].ToString();
+                txtContact.Text = ds.Tables[0].Rows[0][2].ToString();
+                txtEmail.Text = ds.Tables[0].Rows[0][3].ToString();
+                txtState.Text = ds.Tables[0].Rows[0][4].ToString();
+                txtCity.Text = ds.Tables[0].Rows[0][5].ToString();
+                txtPincode.Text = ds.Tables[0].Rows[0][6].ToString();
 
-                if (ds.Tables[0].Rows[0][8].ToString() != "")
+                if (ds.Tables[0].Rows[0][7].ToString() != "")
                 {
 
                     // Get the image data from the result set
-                    byte[] imageData = (byte[])ds.Tables[0].Rows[0][8];
+                    byte[] imageData = (byte[])ds.Tables[0].Rows[0][7];
 
                     // Convert the image data to an Image object
                     Image image1 = ByteArrayToImage(imageData);
@@ -195,6 +195,7 @@ namespace Library_Management_System
             ViewMember_Load(sender, e);
         }
 
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Data will be modified, Confirm?", "Are you sure!", MessageBoxButtons.OK, MessageBoxIcon.Warning) == DialogResult.OK)
@@ -207,12 +208,12 @@ namespace Library_Management_System
                 Int64 pin = Int64.Parse(txtPincode.Text);
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = conn.CreateCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "update NewMember set mName='" + fullname + "', mContact='" + contact + "', mEmail='" + email + "', mState='" + state + "', mCity='" + city + "', mPinCode=" + pin + " where ID = " + rowid + " ";
+                cmd.CommandText = "update NewMember set mName='" + fullname + "', mContact='" + contact + "', mEmail='" + email + "', mState='" + state + "', mCity='" + city + "', mPinCode=" + pin + " where mID = " + mid + " ";
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -232,12 +233,12 @@ namespace Library_Management_System
 
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "delete from NewMember where ID = " + rowid + " ";
+                cmd.CommandText = "delete from NewMember where mID = " + mid + " ";
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -246,6 +247,11 @@ namespace Library_Management_System
                 MessageBox.Show("Data Deleted Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ViewMember_Load(sender, e);
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

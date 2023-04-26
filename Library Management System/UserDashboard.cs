@@ -40,12 +40,12 @@ namespace Library_Management_System
             RoundPictureBox(pictureBox1);
 
             SqlConnection conn3 = new SqlConnection();
-            conn3.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn3.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd3 = new SqlCommand();
             cmd3.Connection = conn3;
 
-            cmd3.CommandText = "select * from NewMember where EnrollID = '" + username + "'";
+            cmd3.CommandText = "select * from NewMember where mID = '" + username + "'";
 
             SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
             DataSet ds3 = new DataSet();
@@ -55,15 +55,15 @@ namespace Library_Management_System
 
             if (ds3.Tables[0].Rows.Count != 0)
             {
-                usernm.Text = "@"+ds3.Tables[0].Rows[0][2].ToString();
+                usernm.Text = "@"+ds3.Tables[0].Rows[0][1].ToString();
                 //txtContact.Text = ds.Tables[0].Rows[0][3].ToString();
                 //txtEmail.Text = ds.Tables[0].Rows[0][4].ToString();
 
-                if (ds3.Tables[0].Rows[0][8].ToString() != "")
+                if (ds3.Tables[0].Rows[0][7].ToString() != "")
                 {
 
                     // Get the image data from the result set
-                    byte[] imageData = (byte[])ds3.Tables[0].Rows[0][8];
+                    byte[] imageData = (byte[])ds3.Tables[0].Rows[0][7];
 
                     // Convert the image data to an Image object
                     Image image = ViewMember.ByteArrayToImage(imageData);
@@ -79,12 +79,14 @@ namespace Library_Management_System
 
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date from IssueReturnBook where EnrollID='" + username + "' and Book_Return_Date is NULL";
+            //cmd.CommandText = "select mID,Member_Name,Book_Name,Book_Issue_Date from IssueReturnBook where mID='" + username + "' and Book_Return_Date is NULL";
+
+            cmd.CommandText = "select t1.MemberID,t2.mName,t3.bName,t1.Book_Issue_Date FROM IssueReturnBook t1 INNER JOIN NewMember t2 ON t1.MemberID = t2.mID INNER JOIN NewBook t3 ON t1.BookID = t3.bId where t2.mID ='" + username + "' and t1.Book_Return_Date is NULL";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -95,12 +97,12 @@ namespace Library_Management_System
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns.Clear();
                 dataGridView1.Columns.Add("serialNumber", "Sr.No.");
-                dataGridView1.Columns.Add("Book_Name", "Book Name");
+                dataGridView1.Columns.Add("bName", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
                 
                 dataGridView1.Columns[0].Width = 50;
 
-                dataGridView1.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView1.Columns[1].DataPropertyName = "bName";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
 
 
@@ -113,7 +115,8 @@ namespace Library_Management_System
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = conn;
 
-            cmd1.CommandText = "select EnrollID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where EnrollID='" + username + "' and Book_Return_Date is NOT NULL";
+            //cmd1.CommandText = "select mID,Member_Name,Book_Name,Book_Issue_Date,Book_Return_Date from IssueReturnBook where mID='" + username + "' and Book_Return_Date is NOT NULL";
+            cmd1.CommandText = "select t1.MemberID,t2.mName,t3.bName,t1.Book_Issue_Date,t1.Book_Return_Date FROM IssueReturnBook t1 INNER JOIN NewMember t2 ON t1.MemberID = t2.mID INNER JOIN NewBook t3 ON t1.BookID = t3.bId where t2.mID ='" + username + "' and t1.Book_Return_Date is NOT NULL";
 
             SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
             DataSet ds1 = new DataSet();
@@ -126,19 +129,22 @@ namespace Library_Management_System
                 dataGridView2.DataSource = ds1.Tables[0];
                 dataGridView2.Columns.Clear();
                 dataGridView2.Columns.Add("serialNumber", "Sr.No.");
-                dataGridView2.Columns.Add("Book_Name", "Book Name");
+                dataGridView2.Columns.Add("bName", "Book Name");
                 dataGridView2.Columns.Add("Book_Issue_Date", "Book Issue Date");
                 dataGridView2.Columns.Add("Book_Return_Date", "Book return Date");
 
                 dataGridView2.Columns[0].Width = 50;
 
-                dataGridView2.Columns[1].DataPropertyName = "Book_Name";
+                dataGridView2.Columns[1].DataPropertyName = "bName";
                 dataGridView2.Columns[2].DataPropertyName = "Book_Issue_Date";
                 dataGridView2.Columns[3].DataPropertyName = "Book_Return_Date";
             }
 
+            dataGridView3.Visible= false;
+            avlBook.Visible= false;
+            searchBook.Visible= false;
+           
 
- 
                     
 
 
@@ -237,6 +243,64 @@ namespace Library_Management_System
         private void usernm_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnbookcheck_Click(object sender, EventArgs e)
+        {
+            //available books 
+            dataGridView3.Visible = true;
+            avlBook.Visible = true;
+            searchBook.Visible = true;
+
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
+
+
+            SqlCommand cmd4 = new SqlCommand();
+            cmd4.Connection = conn;
+
+            cmd4.CommandText = "select bName , bAuthor, bPubl from NewBook WHERE bQuan > 0";
+            SqlDataAdapter da4 = new SqlDataAdapter(cmd4);
+            DataSet ds4 = new DataSet();
+            da4.Fill(ds4);
+
+            if (ds4.Tables[0].Rows.Count > 0)
+            {
+                dataGridView3.DataSource = ds4.Tables[0];
+            }
+        }
+
+        private void searchBook_TextChanged(object sender, EventArgs e)
+        {
+                
+  
+                SqlConnection conn = new SqlConnection();
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+
+                cmd.CommandText = "select bName , bAuthor , bPubl , bQuan from NewBook where bName LIKE '" + searchBook.Text + "%' OR bAuthor LIKE '"+searchBook.Text+"%' AND bQuan > 0";
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+                DataSet ds = new DataSet();
+
+                da.Fill(ds);
+
+                dataGridView3.DataSource = ds.Tables[0];
+
+          
+
+        }
+
+        private void serachBook(object sender, EventArgs e)
+        {
+            searchBook.Clear();
         }
     }
 }

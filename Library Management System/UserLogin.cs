@@ -43,13 +43,13 @@ namespace Library_Management_System
        private  bool IsValidUser(string userId, string password)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source=localhost\\sqlexpress; database=LibraryManagement; integrated security=True;";
+            conn.ConnectionString = "data source=localhost\\sqlexpress; database=LibraryDB; integrated security=True;";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
             conn.Open();
-            cmd.CommandText = "select * from NewMember where EnrollID='" + userId + "' and mPassword='" + password + "'";
+            cmd.CommandText = "select * from NewMember where mID='" + userId + "' and mPassword='" + password + "'";
 
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

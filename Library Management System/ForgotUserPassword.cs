@@ -26,13 +26,13 @@ namespace Library_Management_System
                 String petname = txtUserPetName.Text;
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
                 
                 conn.Open();
                 //cmd.CommandText = "select mPetName from NewMember where EnrollID='" + txtuserID.Text + "' AND mPassword='" + txtUserPetName.Text + "' ";
 
                
-                SqlCommand cmd = new SqlCommand("select mPassword from NewMember where EnrollID='" + txtuserID.Text + "' AND mPetName='" + txtUserPetName.Text + "'", conn);
+                SqlCommand cmd = new SqlCommand("select mPassword from NewMember where mID='" + txtuserID.Text + "' AND mPetName='" + txtUserPetName.Text + "'", conn);
                 SqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())

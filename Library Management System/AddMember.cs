@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Library_Management_System
 {
@@ -93,7 +94,7 @@ namespace Library_Management_System
                         String petname = txtPetName.Text;
 
                         // Create a connection to the database
-                        SqlConnection connection = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False");
+                        SqlConnection connection = new SqlConnection("Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False");
 
                         // Open the database connection
                         connection.Open();
@@ -119,7 +120,7 @@ namespace Library_Management_System
                         // Execute the SQL command
                         command.ExecuteNonQuery();
 
-                        SqlCommand cmd2 = new SqlCommand("SELECT TOP 1 EnrollId FROM NewMember ORDER BY ID DESC", connection);
+                        SqlCommand cmd2 = new SqlCommand("SELECT TOP 1 mID FROM NewMember ORDER BY mID DESC", connection);
                         SqlDataReader dr = cmd2.ExecuteReader();
 
                         if (dr.Read())
@@ -162,6 +163,16 @@ namespace Library_Management_System
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void combostate_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddMember_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

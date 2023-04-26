@@ -24,7 +24,7 @@ namespace Library_Management_System
             panel2.Visible= false; 
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
@@ -57,7 +57,7 @@ namespace Library_Management_System
                 panel2.Visible = true;
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -92,7 +92,7 @@ namespace Library_Management_System
             if(txtBookName.Text != "")
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -110,7 +110,7 @@ namespace Library_Management_System
             else
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -150,7 +150,7 @@ namespace Library_Management_System
                 Int64 bquantity = Int64.Parse(txtQuantity.Text);
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
@@ -179,7 +179,7 @@ namespace Library_Management_System
                 Int64 bquantity = Int64.Parse(txtQuantity.Text);
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;

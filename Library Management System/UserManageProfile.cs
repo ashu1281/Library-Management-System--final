@@ -27,32 +27,32 @@ namespace Library_Management_System
         private void UserManageProfile_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
-            cmd.CommandText = "select * from NewMember where EnrollID = '" + userId + "'";
+            cmd.CommandText = "select * from NewMember where mID= '" + userId + "'";
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
 
 
-            txtName.Text = ds.Tables[0].Rows[0][2].ToString();
-            txtContact.Text = ds.Tables[0].Rows[0][3].ToString();
-            txtEmail.Text = ds.Tables[0].Rows[0][4].ToString();
-            txtState.Text = ds.Tables[0].Rows[0][5].ToString();
-            txtCity.Text = ds.Tables[0].Rows[0][6].ToString();
-            txtPincode.Text = ds.Tables[0].Rows[0][7].ToString();
-            txtPassword.Text = ds.Tables[0].Rows[0][9].ToString();
-            txtPetName.Text = ds.Tables[0].Rows[0][10].ToString();
+            txtName.Text = ds.Tables[0].Rows[0][1].ToString();
+            txtContact.Text = ds.Tables[0].Rows[0][2].ToString();
+            txtEmail.Text = ds.Tables[0].Rows[0][3].ToString();
+            txtState.Text = ds.Tables[0].Rows[0][4].ToString();
+            txtCity.Text = ds.Tables[0].Rows[0][5].ToString();
+            txtPincode.Text = ds.Tables[0].Rows[0][6].ToString();
+            txtPassword.Text = ds.Tables[0].Rows[0][8].ToString();
+            txtPetName.Text = ds.Tables[0].Rows[0][9].ToString();
 
-            if (ds.Tables[0].Rows[0][8].ToString() != "")
+            if (ds.Tables[0].Rows[0][7].ToString() != "")
             {
 
                 // Get the image data from the result set
-                byte[] imageData = (byte[])ds.Tables[0].Rows[0][8];
+                byte[] imageData = (byte[])ds.Tables[0].Rows[0][7];
 
                 // Convert the image data to an Image object
                 Image image = ViewMember.ByteArrayToImage(imageData);
@@ -87,12 +87,12 @@ namespace Library_Management_System
             if (MessageBox.Show("Do you want to delete Account?", "confirm", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "Delete from NewMember where EnrollID = '" + userId + "'";
+                cmd.CommandText = "Delete from NewMember where mID= '" + userId + "'";
 
                 conn.Open();
                 int rowsAffected = cmd.ExecuteNonQuery();
@@ -124,7 +124,7 @@ namespace Library_Management_System
 
                 // Open a connection to the database
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
@@ -133,7 +133,7 @@ namespace Library_Management_System
                 imageDataParameter.Value = imageData;
 
                 con.Open();
-                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword, mPhoto = @imageDataParameter WHERE EnrollID= '" + userId + "'";
+                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword, mPhoto = @imageDataParameter WHERE mID= '" + userId + "'";
 
 
 
@@ -168,7 +168,7 @@ namespace Library_Management_System
 
                 // Open a connection to the database
                 SqlConnection con=new SqlConnection();
-                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                con.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
@@ -176,7 +176,7 @@ namespace Library_Management_System
                
 
                 con.Open();
-                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword WHERE EnrollID= '"+ userId + "'";
+                cmd.CommandText = "UPDATE NewMember SET mName = @newName, mEmail = @newEmail, mContact = @newContact, mState = @newState, mCity = @newCity, mPincode = @newPincode, mPassword = @newPassword WHERE mID= '"+ userId + "'";
 
 
 

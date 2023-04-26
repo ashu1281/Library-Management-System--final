@@ -21,12 +21,12 @@ namespace Library_Management_System
         private void ListofMembers_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+            conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = conn;
 
             //cmd.CommandText = "SELECT Member_Name, COUNT(Book_Name) AS count FROM IssueReturnBook GROUP BY Member_Name ORDER BY count DESC";
-            cmd.CommandText = "SELECT t1.mName, t1.mContact,t1.mCity, COUNT(t2.Book_Name) AS count FROM NewMember t1 JOIN IssueReturnBook t2 ON t1.EnrollID = t2.EnrollID GROUP BY t1.mName, t1.mContact, t1.mCity ORDER BY count DESC";
+            cmd.CommandText = "SELECT t1.mName, t1.mContact,t1.mCity, COUNT(t2.BookID) AS count FROM NewMember t1 JOIN IssueReturnBook t2 ON t1.mID = t2.MemberID GROUP BY t1.mName, t1.mContact, t1.mCity ORDER BY count DESC";
 
 
 

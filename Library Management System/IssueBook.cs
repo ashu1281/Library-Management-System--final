@@ -21,9 +21,7 @@ namespace Library_Management_System
         public IssueBook()
         {
             InitializeComponent();
-            this.MouseDown += new MouseEventHandler(IssueBook_MouseDown);
-            this.MouseMove += new MouseEventHandler(IssueBook_MouseMove);
-            this.MouseUp += new MouseEventHandler(IssueBook_MouseUp);
+            
         }
 
 
@@ -35,17 +33,17 @@ namespace Library_Management_System
         Int64 count = 0;
         private void btnSearchEnrollNo_Click(object sender, EventArgs e)
         {
-            if (txtEnroll.Text != null)
+            if (txtEnroll.Text != null /*&& txtEnroll.Text !== int*/)
             {
 
                 String eid = txtEnroll.Text;
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
 
-                cmd.CommandText = "select * from NewMember where EnrollID = '" + eid + "'";
+                cmd.CommandText = "select * from NewMember where mID = '" + eid + "'";
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
@@ -55,15 +53,15 @@ namespace Library_Management_System
 
                 if (ds.Tables[0].Rows.Count != 0)
                 {
-                    txtName.Text = ds.Tables[0].Rows[0][2].ToString();
-                    txtContact.Text = ds.Tables[0].Rows[0][3].ToString();
-                    txtEmail.Text = ds.Tables[0].Rows[0][4].ToString();
+                    txtName.Text = ds.Tables[0].Rows[0][1].ToString();
+                    txtContact.Text = ds.Tables[0].Rows[0][2].ToString();
+                    txtEmail.Text = ds.Tables[0].Rows[0][3].ToString();
 
-                    if (ds.Tables[0].Rows[0][8].ToString() != "")
+                    if (ds.Tables[0].Rows[0][7].ToString() != "")
                     {
 
                         // Get the image data from the result set
-                        byte[] imageData = (byte[])ds.Tables[0].Rows[0][8];
+                        byte[] imageData = (byte[])ds.Tables[0].Rows[0][7];
 
                         // Convert the image data to an Image object
                         Image image = ViewMember.ByteArrayToImage(imageData);
@@ -84,7 +82,7 @@ namespace Library_Management_System
                 }
 
                 //for finding count             
-                cmd.CommandText = "select * from IssueReturnBook where EnrollId='" + eid + "' and Book_Return_Date is NULL ";
+                cmd.CommandText = "select * from IssueReturnBook where irID='" + eid + "' and Book_Return_Date is NULL ";
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 DataSet ds1 = new DataSet();
                 da1.Fill(ds1);
@@ -96,7 +94,7 @@ namespace Library_Management_System
                 comboBoxBooks.Items.Clear();
                 conn.Open();
                 string sqlCommandText = string.Empty;
-                sqlCommandText = "SELECT bName FROM NewBook WHERE bName NOT IN (SELECT Book_Name FROM IssueReturnBook WHERE EnrollID = '" + eid + "' and Book_Return_Date is NULL) ORDER BY bName ASC";
+                sqlCommandText = "SELECT bName FROM NewBook WHERE bId NOT IN (SELECT BookID FROM IssueReturnBook WHERE memberID = '" + eid + "' and Book_Return_Date is NULL) ORDER BY bName ASC";
 
                 cmd = new SqlCommand(sqlCommandText, conn);
                 SqlDataReader Sdr = cmd.ExecuteReader();
@@ -153,31 +151,31 @@ namespace Library_Management_System
                     if (count < 4)
                     {
 
-                        String enroll = txtEnroll.Text;
-                        String name = txtName.Text;
-                        String contact = txtContact.Text;
-                        String email = txtEmail.Text;
+                        int enroll = int.Parse(txtEnroll.Text);
                         String bookName = comboBoxBooks.Text;
                         String issueDate = dateTimePicker1.Text;
 
 
                         SqlConnection conn = new SqlConnection();
-                        conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                        conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
                         SqlCommand cmd = new SqlCommand();
                         cmd.Connection = conn;
 
-                        cmd.CommandText = "select bQuan from NewBook where bName = '" + bookName + "'";
+                        cmd.CommandText = "select bId,bQuan from NewBook where bName = '" + bookName + "'";
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         DataSet ds = new DataSet();
                         da.Fill(ds);
-                        object quan = ds.Tables[0].Rows[0][0];
+
+                        int bookid = int.Parse(ds.Tables[0].Rows[0][0].ToString());
+
+                        object quan = ds.Tables[0].Rows[0][1];
                         Int64 quantity = Convert.ToInt64(quan);
 
                         if (quantity > 0)
                         {
                             quantity--;
                             conn.Open();
-                            cmd.CommandText = "insert into IssueReturnBook (EnrollID,Member_Name,Member_Contact,Member_Email,Book_Name,Book_Issue_Date) values ('" + enroll + "','" + name + "','" + contact + "','" + email + "','" + bookName + "','" + issueDate + "')";
+                            cmd.CommandText = "insert into IssueReturnBook (MemberID,BookID,Book_Issue_Date) values (" + enroll + ","+bookid+",'" + issueDate + "')";
                             cmd.ExecuteNonQuery();
                             cmd.CommandText = "update NewBook SET bQuan = " + quantity + " WHERE bName='" + bookName + "'";
                             cmd.ExecuteNonQuery();
@@ -216,29 +214,6 @@ namespace Library_Management_System
 
         }
 
-        private bool isDragging = false;
-        private Point lastLocation;
-        private void IssueBook_MouseDown(object sender, MouseEventArgs e)
-        {
-            isDragging = true;
-            lastLocation = e.Location;
-        }
-
-        private void IssueBook_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                this.Location = new Point(
-                    (this.Location.X - lastLocation.X) + e.X,
-                    (this.Location.Y - lastLocation.Y) + e.Y);
-
-                this.Update();
-            }
-        }
-
-        private void IssueBook_MouseUp(object sender, MouseEventArgs e)
-        {
-            isDragging = false;
-        }
+    
     }
 }

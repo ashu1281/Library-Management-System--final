@@ -61,13 +61,14 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.bookListdataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.bookListdataGridView.Location = new System.Drawing.Point(40, 96);
-            this.bookListdataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bookListdataGridView.Location = new System.Drawing.Point(53, 118);
+            this.bookListdataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookListdataGridView.Name = "bookListdataGridView";
             this.bookListdataGridView.RowHeadersWidth = 51;
             this.bookListdataGridView.RowTemplate.Height = 24;
-            this.bookListdataGridView.Size = new System.Drawing.Size(636, 416);
+            this.bookListdataGridView.Size = new System.Drawing.Size(848, 512);
             this.bookListdataGridView.TabIndex = 0;
+            this.bookListdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListdataGridView_CellContentClick);
             this.bookListdataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bookListdataGridView_RowPostPaint);
             // 
             // label1
@@ -75,22 +76,23 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkGray;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 17.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(156, 42);
+            this.label1.Location = new System.Drawing.Point(208, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(429, 28);
+            this.label1.Size = new System.Drawing.Size(540, 33);
             this.label1.TabIndex = 4;
             this.label1.Text = "LIST OF BOOKS READ BY MEMBERS\r\n";
             // 
             // listofReadedBooks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(714, 546);
+            this.ClientSize = new System.Drawing.Size(952, 672);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bookListdataGridView);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "listofReadedBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of books read by the members";

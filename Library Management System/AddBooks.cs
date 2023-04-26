@@ -40,7 +40,7 @@ namespace Library_Management_System
                 Int64 bquantity = Int64.Parse(txtQuantity.Text);
 
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryManagement;Integrated Security=True;Pooling=False";
+                conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
                 //conn.ConnectionString = "data source = localhost\\sqlexpress; database = LibraryManagement;integrated security=True";
 
 

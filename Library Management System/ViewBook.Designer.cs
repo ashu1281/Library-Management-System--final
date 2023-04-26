@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewBook));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBookName = new System.Windows.Forms.TextBox();
@@ -79,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 13F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(247, 124);
+            this.label2.Location = new System.Drawing.Point(373, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 27);
             this.label2.TabIndex = 1;
@@ -91,10 +90,10 @@
             this.txtBookName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBookName.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookName.Location = new System.Drawing.Point(467, 124);
+            this.txtBookName.Location = new System.Drawing.Point(593, 126);
             this.txtBookName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(170, 28);
+            this.txtBookName.Size = new System.Drawing.Size(219, 28);
             this.txtBookName.TabIndex = 2;
             this.txtBookName.TextChanged += new System.EventHandler(this.txtBookName_TextChanged);
             // 
@@ -104,7 +103,7 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefresh.Font = new System.Drawing.Font("Book Antiqua", 10F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(649, 124);
+            this.btnRefresh.Location = new System.Drawing.Point(835, 126);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(113, 31);
@@ -136,7 +135,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(79, 171);
+            this.dataGridView1.Location = new System.Drawing.Point(79, 172);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -151,7 +150,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(994, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(1084, 305);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -175,10 +174,10 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(79, 482);
+            this.panel2.Location = new System.Drawing.Point(79, 483);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(994, 363);
+            this.panel2.Size = new System.Drawing.Size(1084, 362);
             this.panel2.TabIndex = 5;
             // 
             // txtPDate
@@ -186,7 +185,7 @@
             this.txtPDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPDate.Location = new System.Drawing.Point(688, 60);
+            this.txtPDate.Location = new System.Drawing.Point(778, 60);
             this.txtPDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPDate.Name = "txtPDate";
             this.txtPDate.Size = new System.Drawing.Size(280, 27);
@@ -198,7 +197,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancel.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.Location = new System.Drawing.Point(826, 279);
+            this.btnCancel.Location = new System.Drawing.Point(916, 279);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 43);
@@ -213,7 +212,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDelete.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.Location = new System.Drawing.Point(678, 279);
+            this.btnDelete.Location = new System.Drawing.Point(768, 279);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(101, 43);
@@ -228,7 +227,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnUpdate.Location = new System.Drawing.Point(526, 279);
+            this.btnUpdate.Location = new System.Drawing.Point(616, 279);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(101, 43);
@@ -242,7 +241,7 @@
             this.txtQuantity.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(688, 226);
+            this.txtQuantity.Location = new System.Drawing.Point(778, 226);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(271, 27);
@@ -253,7 +252,7 @@
             this.txtPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(688, 135);
+            this.txtPrice.Location = new System.Drawing.Point(778, 135);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(280, 27);
@@ -268,7 +267,7 @@
             this.txtPublication.Location = new System.Drawing.Point(256, 225);
             this.txtPublication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPublication.Name = "txtPublication";
-            this.txtPublication.Size = new System.Drawing.Size(189, 27);
+            this.txtPublication.Size = new System.Drawing.Size(279, 27);
             this.txtPublication.TabIndex = 8;
             // 
             // txtAuthor
@@ -280,7 +279,7 @@
             this.txtAuthor.Location = new System.Drawing.Point(256, 135);
             this.txtAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(189, 27);
+            this.txtAuthor.Size = new System.Drawing.Size(279, 27);
             this.txtAuthor.TabIndex = 7;
             // 
             // txtbName
@@ -292,7 +291,7 @@
             this.txtbName.Location = new System.Drawing.Point(256, 63);
             this.txtbName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtbName.Name = "txtbName";
-            this.txtbName.Size = new System.Drawing.Size(189, 27);
+            this.txtbName.Size = new System.Drawing.Size(279, 27);
             this.txtbName.TabIndex = 6;
             // 
             // label8
@@ -301,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(476, 226);
+            this.label8.Location = new System.Drawing.Point(566, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 24);
             this.label8.TabIndex = 5;
@@ -313,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(476, 138);
+            this.label7.Location = new System.Drawing.Point(566, 138);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 24);
             this.label7.TabIndex = 4;
@@ -325,7 +324,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(476, 59);
+            this.label6.Location = new System.Drawing.Point(566, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(193, 24);
             this.label6.TabIndex = 3;
@@ -372,8 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1259, 601);
             this.Controls.Add(this.label1);
