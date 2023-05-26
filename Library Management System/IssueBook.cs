@@ -214,6 +214,9 @@ namespace Library_Management_System
 
         }
 
-    
+        private void pictureBoxMemberImg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

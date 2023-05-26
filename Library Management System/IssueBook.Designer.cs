@@ -141,13 +141,14 @@
             this.pictureBoxMemberImg.BackColor = System.Drawing.Color.LightGray;
             this.pictureBoxMemberImg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBoxMemberImg.Image = global::Library_Management_System.Properties.Resources.icons8_student_male_1002;
-            this.pictureBoxMemberImg.Location = new System.Drawing.Point(103, 26);
+            this.pictureBoxMemberImg.Location = new System.Drawing.Point(102, 21);
             this.pictureBoxMemberImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBoxMemberImg.Name = "pictureBoxMemberImg";
             this.pictureBoxMemberImg.Size = new System.Drawing.Size(157, 138);
             this.pictureBoxMemberImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMemberImg.TabIndex = 0;
             this.pictureBoxMemberImg.TabStop = false;
+            this.pictureBoxMemberImg.Click += new System.EventHandler(this.pictureBoxMemberImg_Click);
             // 
             // panel3
             // 

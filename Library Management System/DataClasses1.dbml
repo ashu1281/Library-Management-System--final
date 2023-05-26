@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LibraryDB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False" SettingsObjectName="Library_Management_System.Properties.Settings" SettingsPropertyName="LibraryDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.IssueReturnBook" Member="IssueReturnBooks">
+    <Type Name="IssueReturnBook">
+      <Column Name="irID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MemberID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Book_Issue_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Book_Return_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="NewBook_IssueReturnBook" Member="NewBook" ThisKey="BookID" OtherKey="bId" Type="NewBook" IsForeignKey="true" />
+      <Association Name="NewMember_IssueReturnBook" Member="NewMember" ThisKey="MemberID" OtherKey="mID" Type="NewMember" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.loginTable" Member="loginTables">
+    <Type Name="loginTable">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewBook" Member="NewBooks">
+    <Type Name="NewBook">
+      <Column Name="bId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="bAuthor" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="bPubl" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="bPurDate" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="bPrice" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="bQuan" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Association Name="NewBook_IssueReturnBook" Member="IssueReturnBooks" ThisKey="bId" OtherKey="BookID" Type="IssueReturnBook" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NewMember" Member="NewMembers">
+    <Type Name="NewMember">
+      <Column Name="mID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mContact" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mEmail" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mState" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mCity" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mPinCode" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="mPhoto" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="mPassword" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="mPetName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Association Name="NewMember_IssueReturnBook" Member="IssueReturnBooks" ThisKey="mID" OtherKey="MemberID" Type="IssueReturnBook" />
+    </Type>
+  </Table>
+</Database>
