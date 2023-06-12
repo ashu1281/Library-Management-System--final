@@ -70,10 +70,10 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(150, 84);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(200, 103);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(346, 378);
+            this.panel2.Size = new System.Drawing.Size(461, 465);
             this.panel2.TabIndex = 2;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -83,10 +83,10 @@
             this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRefresh.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(103, 330);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRefresh.Location = new System.Drawing.Point(123, 406);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(70, 30);
+            this.btnRefresh.Size = new System.Drawing.Size(107, 37);
             this.btnRefresh.TabIndex = 16;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@
             this.btnAddBookCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAddBookCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAddBookCancel.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnAddBookCancel.Location = new System.Drawing.Point(254, 330);
-            this.btnAddBookCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBookCancel.Location = new System.Drawing.Point(339, 406);
+            this.btnAddBookCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddBookCancel.Name = "btnAddBookCancel";
-            this.btnAddBookCancel.Size = new System.Drawing.Size(67, 30);
+            this.btnAddBookCancel.Size = new System.Drawing.Size(89, 37);
             this.btnAddBookCancel.TabIndex = 15;
             this.btnAddBookCancel.Text = "Cancel";
             this.btnAddBookCancel.UseVisualStyleBackColor = false;
@@ -114,10 +114,10 @@
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSave.Font = new System.Drawing.Font("Book Antiqua", 11F, System.Drawing.FontStyle.Bold);
-            this.btnSave.Location = new System.Drawing.Point(186, 330);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(248, 406);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(55, 30);
+            this.btnSave.Size = new System.Drawing.Size(73, 37);
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -129,10 +129,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(159, 181);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(212, 223);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(149, 24);
+            this.dateTimePicker1.Size = new System.Drawing.Size(197, 28);
             this.dateTimePicker1.TabIndex = 13;
             this.dateTimePicker1.Value = new System.DateTime(2023, 3, 26, 17, 46, 5, 0);
             // 
@@ -142,10 +142,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(159, 286);
-            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtQuantity.Location = new System.Drawing.Point(212, 352);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(149, 24);
+            this.txtQuantity.Size = new System.Drawing.Size(197, 28);
             this.txtQuantity.TabIndex = 12;
             // 
             // txtPrice
@@ -154,10 +154,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(159, 236);
-            this.txtPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrice.Location = new System.Drawing.Point(212, 290);
+            this.txtPrice.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(149, 24);
+            this.txtPrice.Size = new System.Drawing.Size(197, 28);
             this.txtPrice.TabIndex = 11;
             // 
             // txtPublication
@@ -166,10 +166,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPublication.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPublication.Location = new System.Drawing.Point(159, 129);
-            this.txtPublication.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPublication.Location = new System.Drawing.Point(212, 159);
+            this.txtPublication.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPublication.Name = "txtPublication";
-            this.txtPublication.Size = new System.Drawing.Size(149, 24);
+            this.txtPublication.Size = new System.Drawing.Size(197, 28);
             this.txtPublication.TabIndex = 10;
             // 
             // txtAuthor
@@ -178,10 +178,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAuthor.Location = new System.Drawing.Point(159, 80);
-            this.txtAuthor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAuthor.Location = new System.Drawing.Point(212, 98);
+            this.txtAuthor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(149, 24);
+            this.txtAuthor.Size = new System.Drawing.Size(197, 28);
             this.txtAuthor.TabIndex = 9;
             // 
             // txtBookName
@@ -190,10 +190,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBookName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBookName.Location = new System.Drawing.Point(159, 36);
-            this.txtBookName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBookName.Location = new System.Drawing.Point(212, 44);
+            this.txtBookName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBookName.Name = "txtBookName";
-            this.txtBookName.Size = new System.Drawing.Size(149, 24);
+            this.txtBookName.Size = new System.Drawing.Size(197, 28);
             this.txtBookName.TabIndex = 8;
             // 
             // label7
@@ -203,10 +203,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(18, 286);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(24, 352);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(126, 21);
+            this.label7.Size = new System.Drawing.Size(155, 24);
             this.label7.TabIndex = 7;
             this.label7.Text = "Book Quantity :";
             // 
@@ -217,10 +216,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(18, 236);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(24, 290);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 21);
+            this.label6.Size = new System.Drawing.Size(123, 24);
             this.label6.TabIndex = 6;
             this.label6.Text = "Book Price  :";
             // 
@@ -231,10 +229,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(18, 181);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(24, 223);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 21);
+            this.label5.Size = new System.Drawing.Size(151, 24);
             this.label5.TabIndex = 5;
             this.label5.Text = "Purchase Date :";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -246,10 +243,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(18, 129);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(24, 159);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 21);
+            this.label4.Size = new System.Drawing.Size(178, 24);
             this.label4.TabIndex = 4;
             this.label4.Text = "Book Publication :";
             // 
@@ -260,10 +256,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(18, 80);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(24, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 21);
+            this.label3.Size = new System.Drawing.Size(146, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Author Name :";
             // 
@@ -274,10 +269,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Book Antiqua", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(18, 36);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(24, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 21);
+            this.label2.Size = new System.Drawing.Size(127, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Book Name :";
             // 
@@ -286,23 +280,24 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Book Antiqua", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(247, 31);
+            this.label1.Location = new System.Drawing.Point(329, 38);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 32);
+            this.label1.Size = new System.Drawing.Size(214, 41);
             this.label1.TabIndex = 17;
             this.label1.Text = "ADD BOOK";
             // 
             // AddBooks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(638, 483);
+            this.ClientSize = new System.Drawing.Size(851, 594);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBox = false;
             this.Name = "AddBooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

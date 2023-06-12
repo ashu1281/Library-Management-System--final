@@ -57,9 +57,39 @@ namespace Library_Management_System
                 issuedBooksdataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
 
                 issuedBooksdataGridView1.Columns[0].Width = 70;
-                
+
+                // Add the new column for Due Amount
+                issuedBooksdataGridView1.Columns.Add("dueAmount", "Due Amount");
+
+                // Calculate and populate the Due Amount values
+                foreach (DataGridViewRow row in issuedBooksdataGridView1.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(row.Cells["Book_Issue_Date"].Value.ToString());
+                    DateTime currentDate = DateTime.Now;
+                    TimeSpan difference = currentDate - issueDate;
+                    int daysDifference = (int)difference.TotalDays;
+
+                    if (daysDifference > 10)
+                    {
+                        // Overdue per day is rs. 5 
+                        int dueAmount = (daysDifference - 10) * 5;
+                        row.Cells["dueAmount"].Value = dueAmount;
+
+                        // Set the cell's style to red if due amount is greater than 0
+                        if (row.Cells["dueAmount"].Style != null)
+                        {
+                            row.Cells["dueAmount"].Style.ForeColor = Color.Red;
+                        }
+                    }
+                    else
+                    {
+                        row.Cells["dueAmount"].Value = 0;
+                    }
+                }
+
+
             }
-            
+
 
             SqlCommand cmd1 = new SqlCommand();
             cmd1.Connection = conn;
@@ -123,6 +153,11 @@ namespace Library_Management_System
         {
             DataGridViewRow row = returnedBooksdataGridView2.Rows[e.RowIndex];
             row.Cells["serialNumber"].Value = (e.RowIndex+1).ToString();
+        }
+
+        private void issuedBooksdataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

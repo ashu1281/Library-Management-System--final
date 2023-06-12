@@ -253,6 +253,27 @@ namespace Library_Management_System
         {
 
         }
+
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+                
+            }
+        }
+
+        private void dataGridView1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+
+            }
+        }
     }
 
 }

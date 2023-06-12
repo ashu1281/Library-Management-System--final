@@ -39,6 +39,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnbookcheck = new System.Windows.Forms.Button();
             this.usernm = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -53,7 +54,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.PictureBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnbookcheck = new System.Windows.Forms.Button();
             this.avlBook = new System.Windows.Forms.Label();
             this.searchBook = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -112,6 +112,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(55)))), ((int)(((byte)(109)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -169,6 +170,21 @@
             this.panel1.Size = new System.Drawing.Size(899, 337);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // btnbookcheck
+            // 
+            this.btnbookcheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
+            this.btnbookcheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnbookcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbookcheck.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnbookcheck.Location = new System.Drawing.Point(669, 250);
+            this.btnbookcheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnbookcheck.Name = "btnbookcheck";
+            this.btnbookcheck.Size = new System.Drawing.Size(176, 57);
+            this.btnbookcheck.TabIndex = 8;
+            this.btnbookcheck.Text = "Check Book Availability";
+            this.btnbookcheck.UseVisualStyleBackColor = false;
+            this.btnbookcheck.Click += new System.EventHandler(this.btnbookcheck_Click);
             // 
             // usernm
             // 
@@ -338,21 +354,6 @@
             this.dataGridView3.RowTemplate.Height = 28;
             this.dataGridView3.Size = new System.Drawing.Size(893, 152);
             this.dataGridView3.TabIndex = 7;
-            // 
-            // btnbookcheck
-            // 
-            this.btnbookcheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(215)))), ((int)(((byte)(232)))));
-            this.btnbookcheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnbookcheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbookcheck.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnbookcheck.Location = new System.Drawing.Point(669, 250);
-            this.btnbookcheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnbookcheck.Name = "btnbookcheck";
-            this.btnbookcheck.Size = new System.Drawing.Size(176, 57);
-            this.btnbookcheck.TabIndex = 8;
-            this.btnbookcheck.Text = "Check Book Availability";
-            this.btnbookcheck.UseVisualStyleBackColor = false;
-            this.btnbookcheck.Click += new System.EventHandler(this.btnbookcheck_Click);
             // 
             // avlBook
             // 

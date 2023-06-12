@@ -82,7 +82,7 @@ namespace Library_Management_System
                 }
 
                 //for finding count             
-                cmd.CommandText = "select * from IssueReturnBook where irID='" + eid + "' and Book_Return_Date is NULL ";
+                cmd.CommandText = "select * from IssueReturnBook where MemberID='" + eid + "' and Book_Return_Date is NULL ";
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 DataSet ds1 = new DataSet();
                 da1.Fill(ds1);
@@ -124,7 +124,7 @@ namespace Library_Management_System
                 txtName.Clear();
                 txtContact.Clear();
                 txtEmail.Clear();
-                comboBoxBooks.Items.Clear();
+                comboBoxBooks.SelectedItem= null;
 
                 Image image2 = Image.FromFile("D:\\pratiti training\\Project\\Library Management System\\Library Management System\\icon and imgs\\icons8-student-male-100.png");
                 pictureBoxMemberImg.Image = image2;

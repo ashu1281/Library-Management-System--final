@@ -28,7 +28,7 @@ namespace Library_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            label1.BackColor = System.Drawing.Color.Transparent;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=LibraryDB;Integrated Security=True;Pooling=False";
             SqlCommand cmd = new SqlCommand();
@@ -46,7 +46,7 @@ namespace Library_Management_System
                 BooksdataGridView.Columns.Clear();
                 BooksdataGridView.Columns.Add("serialNumber", "Rank");
                 BooksdataGridView.Columns.Add("bName", "Book Name");
-                BooksdataGridView.Columns.Add("count", "Read Count");
+                BooksdataGridView.Columns.Add("count", "Books Read Count");
                 BooksdataGridView.Columns[0].Width = 60;
                 BooksdataGridView.Columns[1].DataPropertyName = "bName";
                 BooksdataGridView.Columns[1].Width = 200;
@@ -264,11 +264,7 @@ namespace Library_Management_System
 
        
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            Dashboard_Load(sender, e);
-        }
-
+       
         private void listOfReadedToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool Isopen = false;
@@ -310,6 +306,21 @@ namespace Library_Management_System
         }
 
         private void booksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+            Dashboard_Load(sender, e);
+        }
+
+        private void MemberdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

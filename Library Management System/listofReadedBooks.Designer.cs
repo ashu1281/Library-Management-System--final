@@ -38,6 +38,7 @@
             // 
             // bookListdataGridView
             // 
+            this.bookListdataGridView.AllowUserToAddRows = false;
             this.bookListdataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -65,10 +66,12 @@
             this.bookListdataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookListdataGridView.Name = "bookListdataGridView";
             this.bookListdataGridView.RowHeadersWidth = 51;
-            this.bookListdataGridView.RowTemplate.Height = 24;
+            this.bookListdataGridView.RowTemplate.Height = 30;
             this.bookListdataGridView.Size = new System.Drawing.Size(848, 512);
             this.bookListdataGridView.TabIndex = 0;
             this.bookListdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListdataGridView_CellContentClick);
+            this.bookListdataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.bookListdataGridView_CellMouseLeave);
+            this.bookListdataGridView.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.bookListdataGridView_CellMouseMove);
             this.bookListdataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.bookListdataGridView_RowPostPaint);
             // 
             // label1

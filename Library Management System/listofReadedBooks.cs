@@ -64,5 +64,27 @@ namespace Library_Management_System
         {
 
         }
+
+        private void bookListdataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                
+                bookListdataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                bookListdataGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+
+            }
+        }
+
+        private void bookListdataGridView_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                bookListdataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                bookListdataGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Red;
+
+            }
+        }
     }
 }

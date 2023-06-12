@@ -89,6 +89,36 @@ namespace Library_Management_System
 
                 dataGridView1.Columns[1].DataPropertyName = "bName";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
+                
+
+
+                // Add the new column for Due Amount
+                dataGridView1.Columns.Add("dueAmount", "Due Amount");
+
+                // Calculate and populate the Due Amount values
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(row.Cells["Book_Issue_Date"].Value.ToString());
+                    DateTime currentDate = DateTime.Now;
+                    TimeSpan difference = currentDate - issueDate;
+                    int daysDifference = (int)difference.TotalDays;
+
+                    if(daysDifference > 10)
+                    { 
+                        // OverDue per day is rs. 5 
+                        int dueAmount = (daysDifference -10) * 5;
+                        row.Cells["dueAmount"].Value = dueAmount;
+
+                        // Set the cell's style to red if due amount is greater than 0
+                        row.Cells["dueAmount"].Style.ForeColor = Color.Red;
+
+                    }
+                    else
+                    {
+                        row.Cells["dueAmount"].Value = 0;
+                    }
+                }
+
 
             }
             else
@@ -232,6 +262,35 @@ namespace Library_Management_System
                 dataGridView1.Columns[0].DataPropertyName = "irID";
                 dataGridView1.Columns[1].DataPropertyName = "bName";
                 dataGridView1.Columns[2].DataPropertyName = "Book_Issue_Date";
+
+
+                // Add the new column for Due Amount
+                dataGridView1.Columns.Add("dueAmount", "Due Amount");
+
+                // Calculate and populate the Due Amount values
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    DateTime issueDate = DateTime.Parse(row.Cells["Book_Issue_Date"].Value.ToString());
+                    DateTime currentDate = DateTime.Now;
+                    TimeSpan difference = currentDate - issueDate;
+                    int daysDifference = (int)difference.TotalDays;
+
+                    if (daysDifference > 10)
+                    {
+                        // OverDue per day is rs. 5 
+                        int dueAmount = (daysDifference - 10) * 5;
+                        row.Cells["dueAmount"].Value = dueAmount;
+                        
+                        // Set the cell's style to red if due amount is greater than 0
+                        row.Cells["dueAmount"].Style.ForeColor = Color.Red;
+                        
+
+                    }
+                    else
+                    {
+                        row.Cells["dueAmount"].Value = 0;
+                    }
+                }
             }
             else
             {
@@ -240,6 +299,8 @@ namespace Library_Management_System
                 dataGridView1.Columns.Add("bName", "Book Name");
                 dataGridView1.Columns.Add("Book_Issue_Date", "Book Issue Date");
                 dataGridView1.Columns[0].Width = 50;
+                // Add the new column for Due Amount
+                dataGridView1.Columns.Add("dueAmount", "Due Amount");
 
 
             }
@@ -248,6 +309,11 @@ namespace Library_Management_System
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
